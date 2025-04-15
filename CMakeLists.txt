@@ -17,10 +17,10 @@ include(GenerateFileTree)
 add_dependencies(zip_submission generate_file_tree)
 
 # project program
-add_executable(smart-home src/main.cpp)
+add_executable(smart-home main.cpp)
 
 # test program
-add_executable(test_program test/main.cpp)
+add_executable(test_program test.cpp)
 
 # Simplify the build-test cycle.  Build first, run mockery then tests.
 add_custom_target(build_and_test

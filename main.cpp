@@ -6,22 +6,22 @@
 
 #include <string>
 #include <iostream>
-#include "exit_codes.h"
-#include "path_utils.h"
-#include "Logger.h"
-#include "CommandShell.h"
+#include "include/exit_codes.h"
+#include "include/path_utils.h"
+#include "include/Logger.h"
+#include "include/CommandShell.h"
 
-int main(int, char* argv[]) {
+int main(int, char *argv[]) {
     Logger log(getExecutableDir(argv[0]) + "/log.txt");
     log.info("File logger initialized.");
     try {
         CommandShell cli(&log);
-        return cli.Run();  // return an exit code
-    } catch (const std::runtime_error &e){
+        return cli.Run(); // return an exit code
+    } catch (const std::runtime_error &e) {
         log.fatal(e.what(), runtime_error);
-    } catch (const std::exception & e) {
+    } catch (const std::exception &e) {
         log.fatal(e.what(), generic_error);
     } catch (...) {
-        log.fatal("unknown error occurred ",unknown_error);
+        log.fatal("unknown error occurred ", unknown_error);
     }
 }
