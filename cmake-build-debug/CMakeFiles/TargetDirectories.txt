@@ -1,0 +1,3 @@
+/Users/samcaldwell/git/cpp/smart-home/cmake-build-debug/CMakeFiles/smart_home.dir
+/Users/samcaldwell/git/cpp/smart-home/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/samcaldwell/git/cpp/smart-home/cmake-build-debug/CMakeFiles/rebuild_cache.dir
