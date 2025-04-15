@@ -10,7 +10,7 @@ set(MOCK_TELEVISION,"127.0.0.1:8003")
 set(MOCK_THERMOSTAT,"127.0.0.1:8004")
 set(MOCK_VACUUM,"127.0.0.1:8005")
 
-add_custom_target(mockery ALL
+add_custom_target(mockery
         COMMENT "Starting mock Thermostat on port 8000..."
         COMMAND ${CMAKE_COMMAND} -E echo "Building Docker images..."
         COMMAND docker build --tag mockery:local --target base --file "${DOCKERFILE}"  "${PROJECT_ROOT}"

@@ -1,16 +1,18 @@
-// test/logger.cpp
+// test/main.cpp
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
-// Description: Unit test for the Logger class (console and file-based)
-// Dependencies: Logger.h, standard I/O
+// Description: End-to-end tests
 
 #include "../src/Logger.h"
 #include <iostream>
 
 int main() {
+    //
+    // ToDo: this tests logger currently rewrite to test all the things.
+    //
     std::cout << "==== Testing Logger (Console) ====" << std::endl;
 
     Logger consoleLogger(std::cout);
-    consoleLogger.log("Console logger initialized.");
+    consoleLogger.info("Console logger initialized.");
     consoleLogger.error("This is a test error message.");
     // Commented to avoid premature exit:
     // consoleLogger.fatal("Testing fatal exit.", 1);
@@ -19,7 +21,7 @@ int main() {
 
     try {
         Logger fileLogger("build/test_log.txt");
-        fileLogger.log("File logger initialized.");
+        fileLogger.info("File logger initialized.");
         fileLogger.error("Simulated error to file.");
         // Uncomment to test fatal:
         // fileLogger.fatal("Fatal logged to file", 2);

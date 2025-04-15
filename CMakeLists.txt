@@ -16,5 +16,16 @@ include(GenerateFileTree)
 # this ensures we generate a file tree before we zip the submission
 add_dependencies(zip_submission generate_file_tree)
 
-add_executable(build/program src/main.cpp)
+# project program
+add_executable(smart-home src/main.cpp)
 
+# test program
+add_executable(test_program test/main.cpp)
+
+# Simplify the build-test cycle.  Build first, run mockery then tests.
+add_custom_target(build_and_test
+        COMMAND ${CMAKE_COMMAND} --build . --target smart_home
+        COMMAND ${CMAKE_COMMAND} --build . --target mockery
+        COMMENT "Building app, launching mockery, then running tests..."
+        VERBATIM
+)
