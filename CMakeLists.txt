@@ -7,6 +7,10 @@ set(CMAKE_CXX_EXTENSIONS NO)
 
 set(PROJECT_ROOT ${CMAKE_SOURCE_DIR})
 
+target_include_directories(smart_home PRIVATE
+        ${CMAKE_SOURCE_DIR}/include
+)
+
 # Include custom CMake modules
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 include(Mockery)
@@ -17,7 +21,7 @@ include(GenerateFileTree)
 add_dependencies(zip_submission generate_file_tree)
 
 # project program
-add_executable(smart-home main.cpp)
+add_executable(smart_home_exec src/main.cpp)
 
 # test program
 add_executable(test_program test.cpp)
