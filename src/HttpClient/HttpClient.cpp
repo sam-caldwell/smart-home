@@ -7,12 +7,6 @@
 #include <sstream>
 #include <stdexcept>
 
-static size_t writeCallback(void* contents, size_t size, size_t nmemb, std::string* output) {
-    size_t totalSize = size * nmemb;
-    output->append((char*)contents, totalSize);
-    return totalSize;
-}
-
 HttpClient::HttpClient(const std::string& baseUrl) : baseUrl(baseUrl) {
     curl_global_init(CURL_GLOBAL_DEFAULT);
 }
