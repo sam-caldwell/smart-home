@@ -23,12 +23,12 @@
 #include "Help.h"
 #include "Devices.h"
 #include "DeviceMap.h"
-
+#include "DeviceFactory.h"
 
 class CommandParser {
 public:
     explicit CommandParser(Logger* log);
-    ~CommandParser();
+    ~CommandParser() = default;
     ParserResult parse(const std::string& input);
 
 private:

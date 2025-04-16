@@ -9,6 +9,7 @@
 #include <string>
 
 void showHelp();
+
 std::string getSmartRemark();
 
 #endif //SHOW_HELP_H

@@ -22,8 +22,6 @@ CommandParser::CommandParser(Logger* log) : log(log) {
 	}
 }
 
-CommandParser::~CommandParser() = default;  // unique_ptr will clean up
-
 // Convert our input string to space-delimited tokens.
 static std::vector<std::string> tokenize(const std::string& input) {
     std::vector<std::string> tokens;
