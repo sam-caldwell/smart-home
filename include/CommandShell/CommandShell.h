@@ -19,7 +19,6 @@
 #include "utils/getCurrentTimestamp.h"
 #include "utils/StringUtils.h"
 #include "ParserResult/ParserResult.h"
-#include "ParserResult/parserResultString.h"
 
 #include "CommandParser/CommandParser.h"
 #include "CommandShell/CommandShell.h"
