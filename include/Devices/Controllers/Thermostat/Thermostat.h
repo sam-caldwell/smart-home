@@ -6,7 +6,7 @@
 #define THERMOSTAT_H
 #include "Logger/Logger.h"
 #include "ParserResult/ParserResult.h"
-#include "Devices/Base/WebEnabledDevices/WebEnabledDevices.h"
+#include "Devices/WebEnabledDevices/WebEnabledDevices.h"
 #include "Devices/Controllers/Thermostat/ThermostatMode.h"
 #include <sstream>
 

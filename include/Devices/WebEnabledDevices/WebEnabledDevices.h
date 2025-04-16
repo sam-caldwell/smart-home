@@ -6,7 +6,7 @@
 #define WEB_ENABLED_DEVICES_H
 
 #include "Logger/Logger.h"
-#include "Devices/Base/Devices.h"
+#include "Devices/Devices/Devices.h"
 #include "HttpClient/HttpClient.h"
 
 class WebEnabledDevices: public Devices {

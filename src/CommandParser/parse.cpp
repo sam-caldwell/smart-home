@@ -29,22 +29,22 @@ ParserResult CommandParser::parse(const std::string& inputRaw) {
 
         case CommandType::Lights:
             //ToDo: execute Lights
-                log->info("Thermostat");
+                log->info("Lights");
         return ParserResult::ok;
 
         case CommandType::Vacuum:
             //ToDo: execute Vacuum
-                log->info("Thermostat");
+                log->info("Vacuum");
         return ParserResult::ok;
 
         case CommandType::Television:
             //ToDo: execute Television
-                log->info("Thermostat");
+                log->info("Television");
         return ParserResult::ok;
 
         case CommandType::Security:
             //ToDo: execute Security
-                log->info("Thermostat");
+                log->info("Security");
         return ParserResult::ok;
 
         case CommandType::Help:

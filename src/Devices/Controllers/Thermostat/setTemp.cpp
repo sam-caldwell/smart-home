@@ -4,6 +4,6 @@
 
 #include "Devices/Controllers/Thermostat/Thermostat.h"
 
-void Thermostat::setTemp(std::string tempStr){
-    return 0;
+void Thermostat::setTemp(std::string &tempStr){
+
 }

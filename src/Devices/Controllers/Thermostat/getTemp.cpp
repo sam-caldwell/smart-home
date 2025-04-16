@@ -4,6 +4,6 @@
 
 #include "Devices/Controllers/Thermostat/Thermostat.h"
 
-unsigned short Thermostat::getTemp(std::string tempStr){
+unsigned short Thermostat::getTemp() const {
     return 0;
 }

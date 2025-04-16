@@ -7,7 +7,7 @@
 
 #include <memory>
 #include <string>
-#include "Devices/Base/Devices.h"
+#include "Devices/Devices/Devices.h"
 #include "CommandType/CommandType.h"
 #include "Devices/Controllers/Thermostat/Thermostat.h"
 #include "Devices/Controllers/Thermostat/ThermostatPtr.h"

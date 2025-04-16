@@ -2,7 +2,7 @@
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: facilitate help by defining a function to print the help screen.
 
-#include "Help.h"
+#include "Help/Help.h"
 
 void showHelp(){
     std::cout << "Commands:\n"
