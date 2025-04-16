@@ -17,7 +17,7 @@ include(GenerateFileTree)
 add_executable(smart_home_exec main.cpp)
 
 # Test executable
-add_executable(test_program test.cpp)
+add_executable(test_program test/main.cpp)
 
 # Include headers
 include_directories(${PROJECT_ROOT}/include)
