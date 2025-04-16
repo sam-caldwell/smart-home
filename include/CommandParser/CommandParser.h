@@ -14,19 +14,19 @@
 #include <exception>
 #include <memory>
 
-#include "Logger/Logger.h"
-#include "utils/StringUtils.h"
+#include <Logger/Logger.h>
+#include <utils/StringUtils.h>
 
-#include "Help/Help.h"
-#include "CommandParser/tokenize.h"
-#include "CommandType/CommandType.h"
-#include "ParserResult/ParserResult.h"
-#include "Devices/Controllers/Thermostat/ThermostatPtr.h"
-#include "Devices/Controllers/Thermostat/Thermostat.h"
-#include "Devices/Devices/Devices.h"
-#include "Devices/DeviceMap/DeviceMap.h"
-#include "Devices/WebEnabledDevices/WebEnabledDevices.h"
-#include "Devices/Factory/DeviceFactory.h"
+#include <Help/Help.h>
+#include <CommandParser/tokenize.h>
+#include <CommandType/CommandType.h>
+#include <ParserResult/ParserResult.h>
+#include <Devices/Controllers/Thermostat/ThermostatPtr.h>
+#include <Devices/Controllers/Thermostat/Thermostat.h>
+#include <Devices/Devices/Devices.h>
+#include <Devices/DeviceMap/DeviceMap.h>
+#include <Devices/WebEnabledDevices/WebEnabledDevices.h>
+#include <Devices/Factory/DeviceFactory.h>
 
 class CommandParser {
 public:

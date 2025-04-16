@@ -5,10 +5,7 @@
 
 #include "CommandParser/CommandParser.h"
 
-ParserResult invoke_device(
-    DeviceMap *devices,
-    CommandType cmd,
-    std::vector<std::string> &args){
+ParserResult invoke_device(DeviceMap *devices,CommandType cmd, CommandArgs &args){
 
     if (devices->count(cmd)) {
         return devices->at(cmd)->sendCommand(args);
