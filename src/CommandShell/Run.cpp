@@ -26,7 +26,8 @@ int CommandShell::Run() {
 
     while (true) {
         // display the prompt
-        std::cout << "\n" << prompt << " ";
+        std::cout << "
+" << prompt << " ";
 
         // get the command line input
         std::string input;

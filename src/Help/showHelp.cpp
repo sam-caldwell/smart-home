@@ -5,11 +5,16 @@
 #include "Help/Help.h"
 
 void showHelp(){
-    std::cout << "Commands:\n"
-              << " exit|quit - terminate program\n"
-              << " help|?    - show this screen\n"
-              << "\n"
-              << getSmartRemark() << "\n"
+    std::cout << "Commands:
+"
+              << " exit|quit - terminate program
+"
+              << " help|?    - show this screen
+"
+              << "
+"
+              << getSmartRemark() << "
+"
               << std::endl;
 
     // Todo: add more help content here

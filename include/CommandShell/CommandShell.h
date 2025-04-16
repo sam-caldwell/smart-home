@@ -21,7 +21,6 @@
 #include "ParserResult/ParserResult.h"
 
 #include "CommandParser/CommandParser.h"
-#include "CommandShell/CommandShell.h"
 #include "CommandType/CommandType.h"
 
 class CommandShell {
