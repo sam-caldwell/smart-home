@@ -1,21 +1,6 @@
-// File: Help.cpp
+// File: getSmartRemark.cpp
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
-// Description: facilitate help by defining a function to print the help screen.
-
-#include "Help.h"
-#include <vector>
-#include <random>
-
-void showHelp(){
-    std::cout << "Commands:\n"
-              << " exit|quit - terminate program\n"
-              << " help|?    - show this screen\n"
-              << "\n"
-              << getSmartRemark() << "\n"
-              << std::endl;
-
-    // Todo: add more help content here
-};
+// Description: a selector for smart remark generation
 
 std::string getSmartRemark() {
     static const std::vector<std::string> remarks = {
