@@ -10,7 +10,7 @@
 #include <fstream>
 #include <string>
 #include <cstdlib>
-#include "getCurrentTimestamp.h"
+#include "utils/getCurrentTimestamp.h"
 
 class Logger {
 private:
