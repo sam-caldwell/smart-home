@@ -1,0 +1,10 @@
+// toLower.h
+// Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
+
+// Utility to convert a string to lowercase
+inline std::string toLower(const std::string& str) {
+    std::string result = str;
+    std::transform(result.begin(), result.end(), result.begin(),
+                   [](unsigned char c) { return std::tolower(c); });
+    return result;
+}
