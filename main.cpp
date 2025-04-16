@@ -6,7 +6,7 @@
 
 #include <string>
 #include <iostream>
-#include "include/utils/exit_codes.h"
+#include "include/constants/exit_codes.h"
 #include "include/utils/getExecutableDir.h"
 #include "include/Logger/Logger.h"
 #include "include/CommandShell/CommandShell.h"
