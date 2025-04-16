@@ -7,12 +7,21 @@
 #ifndef COMMANDSHELL_H
 #define COMMANDSHELL_H
 
-#include <string>
+#include <algorithm>
+#include <cctype>
 #include <iostream>
+#include <locale>
 #include <sstream>
+#include <string>
+
 #include "Logger.h"
 #include "exit_codes.h"
+#include "getCurrentTimestamp.h"
+#include "StringUtils.h"
+#include "ParserResult.h"
 #include "CommandParser.h"
+#include "CommandShell.h"
+#include "CommandType.h"
 
 class CommandShell {
 public:

@@ -6,15 +6,14 @@
  * @dependencies Requires Logger, CommandParser, DeviceManager.
  * @version 1.0 - Initial stub created for testing integration.
  */
-#include <algorithm>
-#include <cctype>
-#include <locale>
-#include "CommandShell.h"
-#include "StringUtils.h"
-#include "CommandType.h"
-#include "ParserResult.h"
+
+#include "Logger.h"
 #include "exit_codes.h"
 #include "getCurrentTimestamp.h"
+#include "StringUtils.h"
+#include "ParserResult.h"
+#include "CommandShell.h"
+#include "CommandType.h"
 
 int CommandShell::Run() {
 
