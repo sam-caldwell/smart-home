@@ -1,10 +1,8 @@
-// Thermostat.h
+// Thermostat.cpp
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Thermostat Http API device class
 
-#include "WebEnabledDevices.h"
-#include "Logger.h"
-#include "ParserResult.h"
+#include "Termostat.h"
 
 Thermostat::Thermostat(Logger* log, const std::string& connstr): WebEnabledDevices(log, connstr){
   /*do nothing else*/
