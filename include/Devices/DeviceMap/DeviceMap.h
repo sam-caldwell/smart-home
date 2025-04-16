@@ -1,4 +1,3 @@
-
 // DeviceMap.h
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Typedef for mapping CommandType to device instances

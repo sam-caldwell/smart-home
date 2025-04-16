@@ -2,7 +2,7 @@
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Thermostat Http API device class
 
-#include "Devices/Controllers/Thermostat.h"
+#include "Devices/Controllers/Thermostat/Thermostat.h"
 
 // receive command-line input for processing.
 ParserResult Thermostat::sendCommand(std::vector<std::string> &args) {

@@ -1,11 +1,13 @@
-// DeviceFactory.cpp
+// create.cpp
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Implementation of smart home DeviceFactory with endpoint-based construction
 
-#include "Device/Factory/DeviceFactory.h"
+#include "Devices/Factory/DeviceFactory.h"
 
 DevicePtr DeviceFactory::create(CommandType type, Logger* log, const std::string& endpoint) {
+
     switch (type) {
+
         case CommandType::Thermostat:
             return std::make_unique<Thermostat>(log, endpoint);
 
@@ -15,6 +17,9 @@ DevicePtr DeviceFactory::create(CommandType type, Logger* log, const std::string
 
         default:
             log->error("Unsupported device type in DeviceFactory.");
+
         return nullptr;
+
     }
+
 }

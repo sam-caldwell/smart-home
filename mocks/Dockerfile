@@ -4,7 +4,7 @@
 # Dependencies: Docker, limactl + containerd or kubernetes/minikube
 
 ##############################################
-# Stage 1 - Base image setup
+# Stage 1 - Devices image setup
 ##############################################
 FROM ubuntu:latest as base
 
