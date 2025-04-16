@@ -1,4 +1,4 @@
-// Logger.cpp
+// Logger/constructor.cpp
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Implementation of the standard (non-templated) Logger class.
 
@@ -15,11 +15,3 @@ Logger::Logger(const std::string& filename) {
     stream = fileStream;
     ownsStream = true;
 }
-
-Logger::~Logger() {
-    if (ownsStream && stream) {
-        static_cast<std::ofstream*>(stream)->close();
-        delete stream;
-    }
-}
-
