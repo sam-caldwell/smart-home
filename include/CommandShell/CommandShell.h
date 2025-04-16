@@ -14,14 +14,14 @@
 #include <sstream>
 #include <string>
 
-#include "Logger.h"
-#include "exit_codes.h"
-#include "getCurrentTimestamp.h"
-#include "StringUtils.h"
-#include "ParserResult.h"
-#include "CommandParser.h"
-#include "CommandShell.h"
-#include "CommandType.h"
+#include "Logger/Logger.h"
+#include "constants/exit_codes.h"
+#include "utils/getCurrentTimestamp.h"
+#include "utils/StringUtils.h"
+#include "CommandParser/ParserResult/ParserResult.h"
+#include "CommandParser/CommandParser.h"
+#include "CommandShell/CommandShell.h"
+#include "CommandType/CommandType.h"
 
 class CommandShell {
 public:

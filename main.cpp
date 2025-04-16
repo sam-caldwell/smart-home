@@ -6,10 +6,10 @@
 
 #include <string>
 #include <iostream>
-#include "include/constants/exit_codes.h"
-#include "include/utils/getExecutableDir.h"
-#include "include/Logger/Logger.h"
-#include "include/CommandShell/CommandShell.h"
+#include "constants/exit_codes.h"
+#include "utils/getExecutableDir.h"
+#include "Logger/Logger.h"
+#include "CommandShell/CommandShell.h"
 
 int main(int, char *argv[]) {
     Logger log(getExecutableDir(argv[0]) + "/log.txt");

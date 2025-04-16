@@ -14,11 +14,12 @@
 #include <exception>
 #include <memory>
 
-#include "Logger.h"
-#include "ParserResult.h"
-#include "CommandType.h"
-#include "StringUtils.h"
-#include "ThermostatPtr.h"
+#include "Logger/Logger.h"
+#include "utils/StringUtils.h"
+
+#include "CommandParser/ParserResult/ParserResult.h"
+#include "CommandType/CommandType.h"
+#include "Thermostat/ThermostatPtr.h"
 #include "Thermostat.h"
 #include "Help.h"
 #include "Devices.h"
@@ -37,6 +38,11 @@ private:
     // Map CommandType to device instance
     DeviceMap devices;
 };
+
+using CommandArgs = std::vector<std::string>;
+
+// safely invoke device controller
+ParserResult invoke_device(DeviceMap *devices, CommandType cmd, CommandArgs &args);
 
 #endif // COMMAND_PARSER_H
 

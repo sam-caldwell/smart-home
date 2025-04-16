@@ -13,6 +13,6 @@
 /**
  * @brief Get the directory where the binary was launched from, based on argv[0].
  */
-inline std::string getExecutableDir(const char* argv0);
+std::string getExecutableDir(const char* argv0);
 
 #endif //GET_EXECUTABLE_DIR_H

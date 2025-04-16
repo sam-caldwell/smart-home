@@ -1,12 +1,12 @@
-// test.cpp
+// test/main.cpp
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Program for end-to-end testing
 
 #include <string>
 #include <iostream>
-#include "include/exit_codes.h"
-#include "include/path_utils.h"
-#include "include/Logger.h"
+#include "constants/exit_codes.h"
+#include "utils/getExecutableDir.h"
+#include "Logger/Logger.h"
 
 int main(int, char *argv[]) {
     Logger log(getExecutableDir(argv[0]) + "/log.txt");
