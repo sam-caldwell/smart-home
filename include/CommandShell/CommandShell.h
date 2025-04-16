@@ -18,7 +18,9 @@
 #include "constants/exit_codes.h"
 #include "utils/getCurrentTimestamp.h"
 #include "utils/StringUtils.h"
-#include "CommandParser/ParserResult/ParserResult.h"
+#include "ParserResult/ParserResult.h"
+#include "ParserResult/parserResultString.h"
+
 #include "CommandParser/CommandParser.h"
 #include "CommandShell/CommandShell.h"
 #include "CommandType/CommandType.h"
@@ -26,8 +28,8 @@
 class CommandShell {
 public:
     // Constructor and Destructor
-    CommandShell(Logger *log) : log(log){};
-    ~CommandShell(){};
+    CommandShell(Logger *log);
+    ~CommandShell();
 
     /**
      * @brief Runs the interactive command-line shell

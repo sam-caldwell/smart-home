@@ -17,14 +17,16 @@
 #include "Logger/Logger.h"
 #include "utils/StringUtils.h"
 
-#include "CommandParser/ParserResult/ParserResult.h"
+#include "Help/Help.h"
+#include "CommandParser/tokenize.h"
 #include "CommandType/CommandType.h"
-#include "Thermostat/ThermostatPtr.h"
-#include "Thermostat.h"
-#include "Help.h"
-#include "Devices.h"
-#include "DeviceMap.h"
-#include "DeviceFactory.h"
+#include "ParserResult/ParserResult.h"
+#include "Devices/Controllers/Thermostat/ThermostatPtr.h"
+#include "Devices/Controllers/Thermostat/Thermostat.h"
+#include "Devices/Base/Devices.h"
+#include "Devices/Base/DeviceMap.h"
+#include "Devices/Base/WebEnabledDevices/WebEnabledDevices.h"
+#include "Devices/Factory/DeviceFactory.h"
 
 class CommandParser {
 public:
@@ -42,7 +44,7 @@ private:
 using CommandArgs = std::vector<std::string>;
 
 // safely invoke device controller
-ParserResult invoke_device(DeviceMap *devices, CommandType cmd, CommandArgs &args);
+ParserResult invoke_device(DeviceMap devices, CommandType cmd, CommandArgs &args);
 
 #endif // COMMAND_PARSER_H
 

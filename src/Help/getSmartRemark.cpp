@@ -2,6 +2,8 @@
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: a selector for smart remark generation
 
+#include "Help/Help.h"
+
 std::string getSmartRemark() {
     static const std::vector<std::string> remarks = {
         "If you need more help, seek a professional.",

@@ -2,7 +2,7 @@
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Implementation of the CommandParser logic
 
-#include "CommandParser.h"
+#include "CommandParser/CommandParser.h"
 
 // Parse command-line inputs and execute the result
 ParserResult CommandParser::parse(const std::string& inputRaw) {

@@ -7,7 +7,7 @@
  * @version 1.0 - Initial stub created for testing integration.
  */
 
-#include "CommandShell.h"
+#include "CommandShell/CommandShell.h"
 
 int CommandShell::Run() {
 

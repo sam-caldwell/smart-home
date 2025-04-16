@@ -2,7 +2,7 @@
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Implementation of smart home DeviceFactory with endpoint-based construction
 
-#include "DeviceFactory.h"
+#include "Device/Factory/DeviceFactory.h"
 
 DevicePtr DeviceFactory::create(CommandType type, Logger* log, const std::string& endpoint) {
     switch (type) {

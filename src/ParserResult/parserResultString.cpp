@@ -3,6 +3,8 @@
 // Description: stringify ParserResult
 // Dependencies: none
 
+#include "ParserResult/ParserResult.h"
+
 inline const char* parserResultString(ParserResult r) {
     switch (r) {
         case ParserResult::emptyCommand: return "emptyCommand";

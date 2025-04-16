@@ -1,9 +1,11 @@
-// CommandParser/CommandParser.cpp
+// CommandParser/constructor.cpp
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Implementation of the CommandParser logic
 
+#include "CommandParser/CommandParser.h"
+
 CommandParser::CommandParser(Logger* log) : log(log) {
-	std::unordered_map<CommandType, std::string> endpoints = {
+	const std::unordered_map<CommandType, std::string> endpoints = {
     	{CommandType::Thermostat, "http://127.0.0.1:8004"},
     	// {CommandType::Lights, "http://127.0.0.1:8002"},
 	};

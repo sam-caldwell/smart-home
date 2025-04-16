@@ -5,14 +5,12 @@
 #ifndef DEVICE_FACTORY_H
 #define DEVICE_FACTORY_H
 
-#include "Devices.h"
-#include "CommandType.h"
-
-#include "Thermostat.h"
-#include "ThermostatPtr.h"
-
 #include <memory>
 #include <string>
+#include "Devices/Base/Devices.h"
+#include "CommandType/CommandType.h"
+#include "Devices/Controllers/Thermostat/Thermostat.h"
+#include "Devices/Controllers/Thermostat/ThermostatPtr.h"
 
 class DeviceFactory {
 public:

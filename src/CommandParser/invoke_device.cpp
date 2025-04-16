@@ -3,7 +3,7 @@
 // Description: Parses CLI input strings into actionable command tokens
 // Dependencies: <string>, <vector>, <unordered_map>, Logger
 
-#include "CommandParser.h"
+#include "CommandParser/CommandParser.h"
 
 ParserResult invoke_device(
     DeviceMap *devices,

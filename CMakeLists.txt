@@ -21,7 +21,7 @@ add_executable(smart_home_exec main.cpp)
 target_include_directories(smart_home_exec PRIVATE ${PROJECT_ROOT}/include)
 
 # Test executable
-add_executable(test_program test.cpp)
+add_executable(test_program test/main.cpp)
 target_include_directories(test_program PRIVATE ${PROJECT_ROOT}/include)
 
 # Ensure the file tree is generated before zipping

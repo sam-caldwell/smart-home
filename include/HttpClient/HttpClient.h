@@ -8,7 +8,10 @@
 
 #include <string>
 #include <vector>
-#include "writeCallback.h"
+#include <curl/curl.h>
+#include <sstream>
+#include <stdexcept>
+#include "HttpClient/writeCallback.h"
 
 class HttpClient {
 public:

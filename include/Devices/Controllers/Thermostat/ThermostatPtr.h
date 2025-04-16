@@ -5,11 +5,11 @@
 #ifndef THERMOSTAT_PTR_H
 #define THERMOSTAT_PTR_H
 
+#pragma once
+
 #include <memory>
 
-#ifndef THERMOSTAT_H
 class Thermostat;  // Forward declare — no full class needed for unique_ptr
-#endif
 
 using ThermostatPtr = std::unique_ptr<Thermostat>;
 

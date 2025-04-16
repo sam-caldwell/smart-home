@@ -7,11 +7,10 @@
 #ifndef DEVICE_MAP_H
 #define DEVICE_MAP_H
 
-#include "CommandType.h"
-#include "Devices.h"
-#include <unordered_map>
 #include <memory>
-
+#include <unordered_map>
+#include "CommandType/CommandType.h"
+#include "Devices/Base/Devices.h"
 
 // Alias for mapping commands to smart device instances
 using DeviceMap = std::unordered_map<CommandType, DevicePtr>;

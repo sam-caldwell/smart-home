@@ -5,8 +5,8 @@
 #ifndef DEVICES_H
 #define DEVICES_H
 
-#include "Logger.h"
-#include "ParserResult.h"
+#include "Logger/Logger.h"
+#include "ParserResult/ParserResult.h"
 
 class Devices {
 public:
