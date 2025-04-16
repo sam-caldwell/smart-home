@@ -1,19 +1,13 @@
 /**
-* @file CommandShell.cpp
+ * @file CommandShell/Run.cpp
  * @author Sam Caldwell
- * @brief Stub implementation of the CommandShell class for smart home automation.
+ * @brief CommandShell class for smart home automation.
  * @details Provides a command-driven interface. In this version, only the shell loop is implemented.
  * @dependencies Requires Logger, CommandParser, DeviceManager.
  * @version 1.0 - Initial stub created for testing integration.
  */
 
-#include "Logger.h"
-#include "exit_codes.h"
-#include "getCurrentTimestamp.h"
-#include "StringUtils.h"
-#include "ParserResult.h"
 #include "CommandShell.h"
-#include "CommandType.h"
 
 int CommandShell::Run() {
 
@@ -75,11 +69,4 @@ int CommandShell::Run() {
         }
     }
     return 0;
-}
-
-void CommandShell::displayWelcome() const {
-    std::cout << "========================================\n";
-    std::cout << "     Smart Home Automation CLI Shell    \n";
-    std::cout << "         Type 'exit' to quit            \n";
-    std::cout << "========================================\n";
 }
