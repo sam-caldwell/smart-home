@@ -6,4 +6,6 @@
 
 #include <CommandShell/CommandShell.h>
 
-CommandShell::~CommandShell(){}
+CommandShell::~CommandShell(){
+  /* do nothing */
+}

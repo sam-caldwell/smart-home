@@ -31,6 +31,4 @@ private:
     ThermostatMode modeState;
 };
 
-using ThermostatPtr = std::unique_ptr<Thermostat>;
-
 #endif //THERMOSTAT_H

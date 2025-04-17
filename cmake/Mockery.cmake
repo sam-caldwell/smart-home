@@ -4,11 +4,11 @@
 
 set(DOCKERFILE "${PROJECT_ROOT}/mocks/Dockerfile")
 
-set(MOCK_LIGHTS,"127.0.0.1:8001")
-set(MOCK_SECURITY,"127.0.0.1:8002")
-set(MOCK_TELEVISION,"127.0.0.1:8003")
-set(MOCK_THERMOSTAT,"127.0.0.1:8004")
-set(MOCK_VACUUM,"127.0.0.1:8005")
+set(API_MOCK_LIGHTS,"127.0.0.1:8001")
+set(API_MOCK_SECURITY,"127.0.0.1:8002")
+set(API_MOCK_TELEVISION,"127.0.0.1:8003")
+set(API_MOCK_THERMOSTAT,"127.0.0.1:8004")
+set(API_MOCK_VACUUM,"127.0.0.1:8005")
 
 add_custom_target(mockery
         COMMENT "Starting mock Thermostat on port 8000..."
@@ -28,11 +28,11 @@ add_custom_target(mockery
         COMMAND docker kill mockvacuum || true
 
         COMMAND ${CMAKE_COMMAND} -E echo "Starting mock containers..."
-        COMMAND docker run -d --rm --name mocklights --publish ${MOCK_LIGHTS}:8000 mocklights:local
-        COMMAND docker run -d --rm --name mocksecurity --publish ${MOCK_SECURITY}:8000 mocksecurity:local
-        COMMAND docker run -d --rm --name mocktelevision --publish ${MOCK_TELEVISION}:8000 mocktelevision:local
-        COMMAND docker run -d --rm --name mockthermostat --publish ${MOCK_THERMOSTAT}:8000 mockthermostat:local
-        COMMAND docker run -d --rm --name mockvacuum --publish ${MOCK_VACUUM}:8000 mockvacuum:local
+        COMMAND docker run -d --rm --name mocklights --publish "${API_MOCK_LIGHTS}:8000" mocklights:local
+        COMMAND docker run -d --rm --name mocksecurity --publish "${API_MOCK_SECURITY}:8000" mocksecurity:local
+        COMMAND docker run -d --rm --name mocktelevision --publish "${API_MOCK_TELEVISION}:8000" mocktelevision:local
+        COMMAND docker run -d --rm --name mockthermostat --publish "${API_MOCK_THERMOSTAT}:8000" mockthermostat:local
+        COMMAND docker run -d --rm --name mockvacuum --publish "${API_MOCK_VACUUM}:8000" mockvacuum:local
 
         COMMAND ${CMAKE_COMMAND} -E sleep 1
         COMMAND ${CMAKE_COMMAND} -E echo "Verifying containers..."

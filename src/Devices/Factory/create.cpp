@@ -9,11 +9,10 @@ DevicePtr DeviceFactory::create(CommandType type, Logger* log, const std::string
     switch (type) {
 
         case CommandType::Thermostat:
-            return std::make_unique<Thermostat>(log, endpoint);
-
+          return new Thermostat(log, endpoint);
         // Future:
         // case CommandType::Lights:
-        //     return std::make_unique<Lights>(log, endpoint);
+        //     return Lights(log, endpoint);
 
         default:
             log->error("Unsupported device type in DeviceFactory.");

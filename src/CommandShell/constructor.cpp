@@ -6,4 +6,6 @@
 
 #include <CommandShell/CommandShell.h>
 
-CommandShell::CommandShell(Logger *log) : log(log){}
+CommandShell::CommandShell(Logger *log) : log(log){
+  /* do nothing */
+}
