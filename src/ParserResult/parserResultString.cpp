@@ -6,8 +6,8 @@
 #include <ParserResult/ParserResult.h>
 
 
-const char* string(ParserResult r) const {
-    switch (value) {
+const char* string(ParserResult r) {
+    switch (r) {
         case emptyCommand:     return "emptyCommand";
         case exitCommand:      return "exitCommand";
         case badCommand:       return "badCommand";

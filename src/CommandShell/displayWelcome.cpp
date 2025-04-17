@@ -8,12 +8,9 @@
 #include <CommandShell/CommandShell.h>
 
 void CommandShell::displayWelcome() const {
-    std::cout << "========================================
-";
-    std::cout << "     Smart Home Automation CLI Shell
-";
-    std::cout << "         Type 'exit' to quit
-";
-    std::cout << "========================================
-";
+    std::cout << "========================================\n"
+              << "     Smart Home Automation CLI Shell\n"
+              << "         Type 'exit' to quit\n"
+              << "========================================"
+              << std::endl;
 }

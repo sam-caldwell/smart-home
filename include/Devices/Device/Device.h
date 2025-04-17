@@ -7,6 +7,7 @@
 
 #include <Logger/Logger.h>
 #include <ParserResult/ParserResult.h>
+#include <CommandType/CommandType.h>
 
 class Device {
 public:

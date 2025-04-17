@@ -4,6 +4,6 @@
 
 #include <Devices/Device/Device.h>
 
-Devices::Device(Logger *log): log(log) {
+Device::Device(Logger *log): log(log) {
   /* nothing else to do */
 }

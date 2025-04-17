@@ -16,14 +16,12 @@ std::string getSmartRemark() {
         "You might want to consult a human next time.",
         "Would you like to play a game?",
         "Eh...no chess. How about a good game of Global Thermonuclear War?",
-        "If you're feeling warmer, check your pulse.
-(If you smell sulfur you may have bigger issues.)",
+        "If you're feeling warmer, check your pulse.\n(If you smell sulfur you may have bigger issues.)",
         "My other computer is a Gibson.",
         "My grandfather was WOPR.",
         "Strange game.  The only winning move is not to play.",
         "No fighting in the war room!",
-        "The whole point of the doomsday machine is lost if you keep it a secret!
---Dr. Strangelove"
+        "The whole point of the doomsday machine is lost if you keep it a secret!\n--Dr. Strangelove"
     };
 
     static std::random_device rd;
