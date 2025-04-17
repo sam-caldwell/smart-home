@@ -2,7 +2,7 @@
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Convert our input string to space-delimited tokens.
 
-#include "CommandParser/tokenize.h"
+#include <CommandParser/CommandParser.h>
 
 static std::vector<std::string> tokenize(const std::string& input) {
 

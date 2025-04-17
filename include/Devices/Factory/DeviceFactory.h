@@ -7,7 +7,7 @@
 
 #include <memory>
 #include <string>
-#include <Devices/Devices/Devices.h>
+#include <Devices/Device/Device.h>
 #include <CommandType/CommandType.h>
 
 class DeviceFactory {

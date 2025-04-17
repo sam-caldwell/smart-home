@@ -15,6 +15,7 @@ int CommandShell::Run() {
     // ToDo: we could even steal from my old ANSI colors library if we wanted to...and have time...
     // See https://github.com/sam-caldwell/monorepo/tree/main/cpp/common/AnsiColors
     //
+    const char space = ' ';
     const std::string prompt = getCurrentTimestamp()+">";
 
     // CommandParser doesn't need to be part of the class instance.
@@ -26,8 +27,7 @@ int CommandShell::Run() {
 
     while (true) {
         // display the prompt
-        std::cout << "
-" << prompt << " ";
+        std::cout << space << prompt << " ";
 
         // get the command line input
         std::string input;
@@ -36,7 +36,7 @@ int CommandShell::Run() {
 
         // Parse the command-line and execute it, collect a result
         ParserResult result = parser.parse(input);
-        log->info("Parsed command '" + input+"' result: '" + parserResultString(result) + "'");
+        log->info("Parsed command '" + input+"' result: '" + to_string(result) + "'");
 
         // evaluate the result...keep running or terminate?
         switch (result) {

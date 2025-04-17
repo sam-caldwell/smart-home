@@ -17,6 +17,6 @@ enum ParserResult {
   ok
 };
 
-inline const char* parserResultString(ParserResult r);
+inline const char* to_string(ParserResult r);
 
 #endif //PARSER_RESULT_H

@@ -1,11 +1,11 @@
-// WebEnabledDevices/setState.cpp
+// WebEnabledDevice/setState.cpp
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: This is the base class for all devices driven by HTTP API
 
-#include <Devices/WebEnabledDevices/WebEnabledDevices.h>
+#include <Devices/WebEnabledDevice/WebEnabledDevice.h>
 
 // HTTP POST to set/update device state
-void WebEnabledDevices::setState(const std::string& body) {
+void WebEnabledDevice::setState(const std::string& body) {
     try {
         std::string response = http->post("/api/v1/state", body, headers);
         log->info("Set state response: " + response);

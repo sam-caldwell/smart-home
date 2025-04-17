@@ -1,16 +1,16 @@
-// Devices.h
+// Device.h
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: This is the base class for all devices
 
-#ifndef DEVICES_H
-#define DEVICES_H
+#ifndef DEVICE_H
+#define DEVICE_H
 
 #include <Logger/Logger.h>
 #include <ParserResult/ParserResult.h>
 
-class Devices {
+class Device {
 public:
-  Devices(Logger *log);
+  Device(Logger *log);
   virtual ParserResult sendCommand(std::vector<std::string> &args);
 protected:
   virtual void getHealth();
@@ -18,9 +18,9 @@ protected:
   Logger *log;
 };
 
-using DevicePtr = std::unique_ptr<Devices>;
-
 // Alias for mapping commands to smart device instances
+using DevicePtr = Device*;
 using DeviceMap = std::unordered_map<CommandType, DevicePtr>;
 
-#endif //DEVICES_H
+
+#endif //DEVICE_H

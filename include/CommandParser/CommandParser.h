@@ -21,8 +21,8 @@
 #include <CommandType/CommandType.h>
 #include <ParserResult/ParserResult.h>
 #include <Devices/Controllers/Thermostat/Thermostat.h>
-#include <Devices/Devices/Devices.h>
-#include <Devices/WebEnabledDevices/WebEnabledDevices.h>
+#include <Devices/Device/Device.h>
+#include <Devices/WebEnabledDevice/WebEnabledDevice.h>
 #include <Devices/Factory/DeviceFactory.h>
 
 class CommandParser {

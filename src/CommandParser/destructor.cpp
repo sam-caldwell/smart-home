@@ -5,9 +5,11 @@
 #include <CommandParser/CommandParser.h>
 
 CommandParser::~CommandParser() {
-    for (auto& [cmd, device] : deviceMap) {
+
+    //Delete all devices in DeviceMap
+    for (auto& [cmd, device] : devices) {
         delete device;
         device = nullptr;
     }
-    deviceMap.clear();
+    devices.clear();
 }

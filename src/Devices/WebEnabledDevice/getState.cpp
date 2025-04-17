@@ -1,11 +1,11 @@
-// WebEnabledDevices/getState.cpp
+// WebEnabledDevice/getState.cpp
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: This is the base class for all devices driven by HTTP API
 
-#include <Devices/WebEnabledDevices/WebEnabledDevices.h>
+#include <Devices/WebEnabledDevice/WebEnabledDevice.h>
 
 // HTTP GET to retrieve the device state
-void WebEnabledDevices::getState() {
+void WebEnabledDevice::getState() {
     try {
         std::string response = http->get("/api/v1/state");
         log->info("State response: " + response);

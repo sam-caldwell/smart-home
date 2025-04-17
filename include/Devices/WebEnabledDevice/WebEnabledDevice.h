@@ -1,18 +1,18 @@
-// WebEnabledDevices.h
+// WebEnabledDevice.h
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: This is the base class for all devices driven by HTTP API
 
-#ifndef WEB_ENABLED_DEVICES_H
-#define WEB_ENABLED_DEVICES_H
+#ifndef WEB_ENABLED_DEVICE_H
+#define WEB_ENABLED_DEVICE_H
 
 #include <Logger/Logger.h>
-#include <Devices/Devices/Devices.h>
+#include <Devices/Device/Device.h>
 #include <HttpClient/HttpClient.h>
 
-class WebEnabledDevices: public Devices {
+class WebEnabledDevice: public Device {
 public:
-    WebEnabledDevices(Logger *log, const std::string &connstr);
-    ~WebEnabledDevices();
+    WebEnabledDevice(Logger *log, const std::string &connstr);
+    ~WebEnabledDevice();
     virtual ParserResult sendCommand(std::vector<std::string> &args);
 protected:
     void getHealth();
@@ -26,4 +26,4 @@ private:
     };
 };
 
-#endif //WEB_ENABLED_DEVICES_H
+#endif //WEB_ENABLED_DEVICE_H

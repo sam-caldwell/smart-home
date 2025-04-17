@@ -7,10 +7,10 @@
 #include <sstream>
 #include <Logger/Logger.h>
 #include <ParserResult/ParserResult.h>
-#include <Devices/WebEnabledDevices/WebEnabledDevices.h>
+#include <Devices/WebEnabledDevice/WebEnabledDevice.h>
 #include <Devices/Controllers/Thermostat/ThermostatMode.h>
 
-class Thermostat: public WebEnabledDevices {
+class Thermostat: public WebEnabledDevice {
 public:
     explicit Thermostat(Logger* log, const std::string& connstr);
 
