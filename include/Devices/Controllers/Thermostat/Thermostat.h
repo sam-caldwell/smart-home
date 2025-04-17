@@ -4,11 +4,11 @@
 
 #ifndef THERMOSTAT_H
 #define THERMOSTAT_H
-#include "Logger/Logger.h"
-#include "ParserResult/ParserResult.h"
-#include "Devices/WebEnabledDevices/WebEnabledDevices.h"
-#include "Devices/Controllers/Thermostat/ThermostatMode.h"
 #include <sstream>
+#include <Logger/Logger.h>
+#include <ParserResult/ParserResult.h>
+#include <Devices/WebEnabledDevices/WebEnabledDevices.h>
+#include <Devices/Controllers/Thermostat/ThermostatMode.h>
 
 class Thermostat: public WebEnabledDevices {
 public:
@@ -30,5 +30,7 @@ private:
     unsigned short temperature;
     ThermostatMode modeState;
 };
+
+using ThermostatPtr = std::unique_ptr<Thermostat>;
 
 #endif //THERMOSTAT_H

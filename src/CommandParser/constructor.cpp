@@ -2,7 +2,7 @@
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Implementation of the CommandParser logic
 
-#include "CommandParser/CommandParser.h"
+#include <CommandParser/CommandParser.h>
 
 CommandParser::CommandParser(Logger* log) : log(log) {
 	const std::unordered_map<CommandType, std::string> endpoints = {

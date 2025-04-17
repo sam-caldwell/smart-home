@@ -5,8 +5,8 @@
 #ifndef DEVICES_H
 #define DEVICES_H
 
-#include "Logger/Logger.h"
-#include "ParserResult/ParserResult.h"
+#include <Logger/Logger.h>
+#include <ParserResult/ParserResult.h>
 
 class Devices {
 public:
@@ -19,5 +19,8 @@ protected:
 };
 
 using DevicePtr = std::unique_ptr<Devices>;
+
+// Alias for mapping commands to smart device instances
+using DeviceMap = std::unordered_map<CommandType, DevicePtr>;
 
 #endif //DEVICES_H

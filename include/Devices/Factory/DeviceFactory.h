@@ -7,10 +7,8 @@
 
 #include <memory>
 #include <string>
-#include "Devices/Devices/Devices.h"
-#include "CommandType/CommandType.h"
-#include "Devices/Controllers/Thermostat/Thermostat.h"
-#include "Devices/Controllers/Thermostat/ThermostatPtr.h"
+#include <Devices/Devices/Devices.h>
+#include <CommandType/CommandType.h>
 
 class DeviceFactory {
 public:

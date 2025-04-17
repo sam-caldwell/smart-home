@@ -5,7 +5,7 @@
  * @version 1.0 - Initial stub created for testing integration.
  */
 
-#include "CommandShell/CommandShell.h"
+#include <CommandShell/CommandShell.h>
 
 void CommandShell::displayWelcome() const {
     std::cout << "========================================

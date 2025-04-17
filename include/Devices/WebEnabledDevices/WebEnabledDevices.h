@@ -5,9 +5,9 @@
 #ifndef WEB_ENABLED_DEVICES_H
 #define WEB_ENABLED_DEVICES_H
 
-#include "Logger/Logger.h"
-#include "Devices/Devices/Devices.h"
-#include "HttpClient/HttpClient.h"
+#include <Logger/Logger.h>
+#include <Devices/Devices/Devices.h>
+#include <HttpClient/HttpClient.h>
 
 class WebEnabledDevices: public Devices {
 public:

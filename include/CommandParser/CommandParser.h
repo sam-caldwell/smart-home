@@ -18,13 +18,10 @@
 #include <utils/StringUtils.h>
 
 #include <Help/Help.h>
-#include <CommandParser/tokenize.h>
 #include <CommandType/CommandType.h>
 #include <ParserResult/ParserResult.h>
-#include <Devices/Controllers/Thermostat/ThermostatPtr.h>
 #include <Devices/Controllers/Thermostat/Thermostat.h>
 #include <Devices/Devices/Devices.h>
-#include <Devices/DeviceMap/DeviceMap.h>
 #include <Devices/WebEnabledDevices/WebEnabledDevices.h>
 #include <Devices/Factory/DeviceFactory.h>
 
@@ -42,6 +39,9 @@ private:
 };
 
 using CommandArgs = std::vector<std::string>;
+
+// convert string into space-delimited tokens
+static std::vector<std::string> tokenize(const std::string& input);
 
 // safely invoke device controller
 ParserResult invoke_device(DeviceMap devices, CommandType cmd, CommandArgs &args);
