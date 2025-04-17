@@ -16,12 +16,14 @@ include(GenerateFileTree)
 # Include headers
 include_directories(${PROJECT_ROOT}/include)
 
+file(GLOB_RECURSE SOURCE_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
+
 # Main executable
-add_executable(smart_home_exec src/main.cpp)
+add_executable(smart_home_exec ${SOURCE_FILES})
 target_include_directories(smart_home_exec PRIVATE ${PROJECT_ROOT}/include)
 
 # Test executable
-add_executable(test_program test/main.cpp)
+add_executable(test_program test/main.cpp ${SOURCE_FILES})
 target_include_directories(test_program PRIVATE ${PROJECT_ROOT}/include)
 
 # Ensure the file tree is generated before zipping

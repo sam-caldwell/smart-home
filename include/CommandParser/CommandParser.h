@@ -28,7 +28,7 @@
 class CommandParser {
 public:
     explicit CommandParser(Logger* log);
-    ~CommandParser() = default;
+    ~CommandParser();
     ParserResult parse(const std::string& input);
 
 private:
