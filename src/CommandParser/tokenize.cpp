@@ -4,7 +4,7 @@
 
 #include <CommandParser/CommandParser.h>
 
-static std::vector<std::string> tokenize(const std::string& input) {
+TokenList CommandParser::tokenize(const std::string& input) {
 
     std::vector<std::string> tokens;
 

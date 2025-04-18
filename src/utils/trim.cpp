@@ -4,7 +4,7 @@
 #include <utils/StringUtils.h>
 
 // Utility to trim whitespace from both ends
-inline std::string trim(const std::string& str) {
+std::string trim(const std::string& str) {
     auto start = str.begin();
     while (start != str.end() && std::isspace(*start)) start++;
 

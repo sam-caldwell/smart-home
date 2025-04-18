@@ -12,9 +12,9 @@
 #include <cctype>
 
 // Utility to trim whitespace from both ends
-inline std::string trim(const std::string& str);
+std::string trim(const std::string& str);
 
 // Utility to convert a string to lowercase
-inline std::string toLower(const std::string& str);
+std::string toLower(const std::string& str);
 
 #endif // STRING_UTILS_H

@@ -25,26 +25,28 @@
 #include <Devices/WebEnabledDevice/WebEnabledDevice.h>
 #include <Devices/Factory/DeviceFactory.h>
 
+using TokenList = std::vector<std::string>;
+
 class CommandParser {
 public:
     explicit CommandParser(Logger* log);
     ~CommandParser();
     ParserResult parse(const std::string& input);
 
+    using CommandArgs = std::vector<std::string>;
+
 private:
     Logger* log;
+
+    // convert string into space-delimited tokens
+    TokenList tokenize(const std::string& input);
+
+    // safely invoke device controller
+    ParserResult invoke_device(DeviceMap devices, CommandType cmd, CommandArgs &args);
 
     // Map CommandType to device instance
     DeviceMap devices;
 };
-
-using CommandArgs = std::vector<std::string>;
-
-// convert string into space-delimited tokens
-static std::vector<std::string> tokenize(const std::string& input);
-
-// safely invoke device controller
-ParserResult invoke_device(DeviceMap devices, CommandType cmd, CommandArgs &args);
 
 #endif // COMMAND_PARSER_H
 

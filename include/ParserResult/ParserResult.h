@@ -6,6 +6,8 @@
 #ifndef PARSER_RESULT_H
 #define PARSER_RESULT_H
 
+#include <string>
+
 enum ParserResult {
   emptyCommand,
   exitCommand,
@@ -17,6 +19,6 @@ enum ParserResult {
   ok
 };
 
-inline const char* to_string(ParserResult r);
+const std::string to_string(ParserResult r);
 
 #endif //PARSER_RESULT_H
