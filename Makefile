@@ -11,3 +11,5 @@ build:
 	# Build and run the custom build_and_test target
 	cmake --build build --target build_and_test
 
+run:
+	./build/smart_home_exec
