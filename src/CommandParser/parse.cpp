@@ -52,6 +52,11 @@ ParserResult CommandParser::parse(const std::string& inputRaw) {
         log->info("Help requested.");
         return ParserResult::ok;
 
+        case CommandType::TicTacToe:
+            std::cout << "Wouldn't you prefer a nice game of chess?" << std::endl;
+        log->info("TicTacToe requested.");
+        return ParserResult::ok;
+
         case CommandType::Unknown:
             //fall through
                 default:

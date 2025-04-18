@@ -17,6 +17,7 @@ CommandType identifyCommand(const std::string& cmd) {
                 {"vacuum",     CommandType::Vacuum},
                 {"television", CommandType::Television},
                 {"security",   CommandType::Security}
+                {"tic-tac-toe", CommandType::TicTacToe},
     };
 
     auto it = commandMap.find(cmd);

@@ -9,7 +9,7 @@
 #include "Logger/Logger.h"
 
 int main(int, char *argv[]) {
-    Logger log(getExecutableDir(argv[0]) + "/log.txt");
+    Logger log(getExecutableDir(argv[0]) + "/test.log");
     log.info("File logger initialized.");
     try {
       log.error("tests not implemented");

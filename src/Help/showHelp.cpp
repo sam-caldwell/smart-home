@@ -11,6 +11,7 @@ void showHelp(){
               << " thermostat set fan <on|off>     - turn on/off fan\n"
               << " thermostat set mode <heat|cool> - set mode\n"
               << " thermostat set temp <number>    - set temperature\n"
+              << " thermostat get                  - get current thermostat state\n"
               << "\n"
               << getSmartRemark() << "\n"
               << std::endl;

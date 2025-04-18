@@ -12,7 +12,7 @@
 #include "CommandShell/CommandShell.h"
 
 int main(int, char *argv[]) {
-    Logger log(getExecutableDir(argv[0]) + "/log.txt");
+    Logger log(getExecutableDir(argv[0]) + "/smart-home.log");
     log.info("File logger initialized.");
     try {
         CommandShell cli(&log);
