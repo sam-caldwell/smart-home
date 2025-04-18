@@ -2,7 +2,7 @@
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Implementation of HttpClient using libcurl
 
-#include <HttpClient/HttpClient.h>
+#include "HttpClient/HttpClient.h"
 
 std::string HttpClient::post(const std::string& endpoint, const std::string& body,
                              const std::vector<std::string>& headers) {

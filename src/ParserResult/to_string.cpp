@@ -3,7 +3,7 @@
 // Description: stringify ParserResult
 // Dependencies: none
 
-#include <ParserResult/ParserResult.h>
+#include "ParserResult/ParserResult.h"
 
 const std::string to_string(ParserResult r) {
     switch (r) {

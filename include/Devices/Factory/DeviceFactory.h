@@ -7,8 +7,8 @@
 
 #include <memory>
 #include <string>
-#include <Devices/Device/Device.h>
-#include <CommandType/CommandType.h>
+#include "Devices/Device/Device.h"
+#include "CommandType/CommandType.h"
 
 class DeviceFactory {
 public:

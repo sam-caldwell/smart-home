@@ -5,15 +5,15 @@
 #ifndef WEB_ENABLED_DEVICE_H
 #define WEB_ENABLED_DEVICE_H
 
-#include <Logger/Logger.h>
-#include <Devices/Device/Device.h>
-#include <HttpClient/HttpClient.h>
+#include "Logger/Logger.h"
+#include "Devices/Device/Device.h"
+#include "HttpClient/HttpClient.h"
 
 class WebEnabledDevice: public Device {
 public:
     WebEnabledDevice(Logger *log, const std::string &connstr);
     ~WebEnabledDevice();
-    virtual ParserResult sendCommand(std::vector<std::string> &args);
+    ParserResult sendCommand(std::vector<std::string> &args);
 protected:
     void getHealth();
     void getState();

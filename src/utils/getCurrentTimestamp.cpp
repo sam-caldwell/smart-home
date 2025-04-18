@@ -3,7 +3,7 @@
 // Description: provides a timestamp string
 // Changes: Initial version created for smart home automation project
 
-#include <utils/getCurrentTimestamp.h>
+#include "utils/getCurrentTimestamp.h"
 
 std::string getCurrentTimestamp() {
     std::ostringstream oss;

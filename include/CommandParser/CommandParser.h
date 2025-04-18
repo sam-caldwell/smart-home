@@ -14,16 +14,16 @@
 #include <exception>
 #include <memory>
 
-#include <Logger/Logger.h>
-#include <utils/StringUtils.h>
+#include "Logger/Logger.h"
+#include "utils/StringUtils.h"
 
 #include <Help/Help.h>
-#include <CommandType/CommandType.h>
-#include <ParserResult/ParserResult.h>
-#include <Devices/Controllers/Thermostat/Thermostat.h>
-#include <Devices/Device/Device.h>
-#include <Devices/WebEnabledDevice/WebEnabledDevice.h>
-#include <Devices/Factory/DeviceFactory.h>
+#include "CommandType/CommandType.h"
+#include "ParserResult/ParserResult.h"
+#include "Devices/Controllers/Thermostat/Thermostat.h"
+#include "Devices/Device/Device.h"
+#include "Devices/WebEnabledDevice/WebEnabledDevice.h"
+#include "Devices/Factory/DeviceFactory.h"
 
 using TokenList = std::vector<std::string>;
 

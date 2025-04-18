@@ -4,7 +4,7 @@
  * @brief Enum class for valid smart home CLI command categories
  * @version 1.0 - Initial stub created for testing integration.
  */
-#include <CommandType/CommandType.h>
+#include "CommandType/CommandType.h"
 
 CommandType identifyCommand(const std::string& cmd) {
     static std::unordered_map<std::string, CommandType> commandMap {

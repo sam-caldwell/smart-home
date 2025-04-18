@@ -7,6 +7,7 @@ target_sources(smart_home_exec PRIVATE
         src/utils/getCurrentTimestamp.cpp
         src/utils/trim.cpp
         src/utils/getExecutableDir.cpp
+        src/ParserResult/to_string.cpp
         src/Logger/error.cpp
         src/Logger/destructor.cpp
         src/Logger/constructor.cpp
@@ -47,7 +48,6 @@ target_sources(smart_home_exec PRIVATE
         src/CommandParser/destructor.cpp
         src/CommandParser/constructor.cpp
         src/CommandType/identifyCommand.cpp
-        src/ParserResult/to_string.cpp
         src/Help/showHelp.cpp
         src/Help/getSmartRemark.cpp
 )

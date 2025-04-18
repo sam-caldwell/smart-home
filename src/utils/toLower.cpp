@@ -1,7 +1,7 @@
 // toLower.cpp
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 
-#include <utils/StringUtils.h>
+#include "utils/StringUtils.h"
 
 // Utility to convert a string to lowercase
 std::string toLower(const std::string& str) {

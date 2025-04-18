@@ -4,9 +4,9 @@
 
 #include <string>
 #include <iostream>
-#include <constants/exit_codes.h>
-#include <utils/getExecutableDir.h>
-#include <Logger/Logger.h>
+#include "constants/exit_codes.h"
+#include "utils/getExecutableDir.h"
+#include "Logger/Logger.h"
 
 int main(int, char *argv[]) {
     Logger log(getExecutableDir(argv[0]) + "/log.txt");

@@ -4,7 +4,7 @@
 // Handles unhandled exceptions and delegates logic to CommandShell
 // Dependencies: filesystem
 
-#include <utils/getExecutableDir.h>
+#include "utils/getExecutableDir.h"
 
 std::string getExecutableDir(const char* argv0) {
 

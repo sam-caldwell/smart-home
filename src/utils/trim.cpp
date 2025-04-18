@@ -1,7 +1,7 @@
 // trim.cpp
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 
-#include <utils/StringUtils.h>
+#include "utils/StringUtils.h"
 
 // Utility to trim whitespace from both ends
 std::string trim(const std::string& str) {

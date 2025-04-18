@@ -5,10 +5,10 @@
 #ifndef THERMOSTAT_H
 #define THERMOSTAT_H
 #include <sstream>
-#include <Logger/Logger.h>
-#include <ParserResult/ParserResult.h>
-#include <Devices/WebEnabledDevice/WebEnabledDevice.h>
+#include "Logger/Logger.h"
+#include "ParserResult/ParserResult.h"
 #include <Devices/Controllers/Thermostat/ThermostatMode.h>
+#include "Devices/WebEnabledDevice/WebEnabledDevice.h"
 
 class Thermostat: public WebEnabledDevice {
 public:

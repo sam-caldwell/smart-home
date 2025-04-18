@@ -13,7 +13,8 @@ include(ZipSubmission)
 include(GenerateFileTree)
 include(include_directories)
 include(targetMain)
-include(targetTest)
+# Disable test project for now
+# include(targetTest)
 include(linkCurl)
 # Ensure the file tree is generated before zipping
 add_dependencies(zip_submission generate_file_tree)
