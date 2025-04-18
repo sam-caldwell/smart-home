@@ -4,7 +4,6 @@ project(smart-home)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
 set(CMAKE_CXX_EXTENSIONS NO)
-
 set(PROJECT_ROOT ${CMAKE_SOURCE_DIR})
 
 # Custom CMake modules
@@ -12,31 +11,12 @@ list(APPEND CMAKE_MODULE_PATH "${PROJECT_ROOT}/cmake")
 include(Mockery)
 include(ZipSubmission)
 include(GenerateFileTree)
-
-# Include headers
-include_directories(${PROJECT_ROOT}/include)
-
-file(GLOB_RECURSE SOURCE_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
-
-# Main executable
-add_executable(smart_home_exec ${SOURCE_FILES})
-target_include_directories(smart_home_exec PRIVATE ${PROJECT_ROOT}/include)
-
-# Test executable
-add_executable(test_program test/main.cpp ${SOURCE_FILES})
-target_include_directories(test_program PRIVATE ${PROJECT_ROOT}/include)
-
+include(include_directories)
+include(targetMain)
+include(targetTest)
+include(linkCurl)
 # Ensure the file tree is generated before zipping
 add_dependencies(zip_submission generate_file_tree)
-
-
-if(APPLE)
-    target_link_libraries(smart_home_exec PRIVATE "-lcurl")
-else()
-    find_package(CURL REQUIRED)
-    target_link_libraries(smart_home_exec PRIVATE CURL::libcurl)
-endif()
-
 
 # Custom build + test target
 add_custom_target(build_and_test

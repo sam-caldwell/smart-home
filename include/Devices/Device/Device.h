@@ -23,6 +23,7 @@ protected:
 
 // Alias for mapping commands to smart device instances
 using DevicePtr = Device*;
+
 using DeviceMap = std::unordered_map<CommandType, DevicePtr>;
 
 

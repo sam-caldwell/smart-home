@@ -8,5 +8,4 @@
 WebEnabledDevice::~WebEnabledDevice() {
     delete http;
     http = nullptr;
-    log->info("WebEnabledDevice destroyed.");
 }
