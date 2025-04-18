@@ -12,10 +12,12 @@
 class Device {
 public:
   Device(Logger *log);
+  ~Device()=default;
   virtual ParserResult sendCommand(std::vector<std::string> &args);
 protected:
   virtual void getHealth();
   virtual void getState();
+  virtual void setState(const std::string &body);
   Logger *log;
 };
 

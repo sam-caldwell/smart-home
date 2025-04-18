@@ -1,4 +1,4 @@
-// WebEnabledDevice/getState.cpp
+// WebEnabledDevice/getDeviceState.cpp
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: This is the base class for all devices driven by HTTP API
 

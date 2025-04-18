@@ -1,4 +1,4 @@
-// Thermostat/sendCommand.cpp
+// Thermostat/setState.cpp
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Thermostat Http API device class
 

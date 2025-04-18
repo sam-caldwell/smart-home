@@ -1,12 +1,11 @@
-// parserResultString.h
+// to_string.cpp
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: stringify ParserResult
 // Dependencies: none
 
 #include <ParserResult/ParserResult.h>
 
-
-std::string string(ParserResult r) {
+const std::string to_string(ParserResult r) {
     switch (r) {
         case emptyCommand:     return "emptyCommand";
         case exitCommand:      return "exitCommand";

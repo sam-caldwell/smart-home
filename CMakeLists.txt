@@ -29,6 +29,15 @@ target_include_directories(test_program PRIVATE ${PROJECT_ROOT}/include)
 # Ensure the file tree is generated before zipping
 add_dependencies(zip_submission generate_file_tree)
 
+
+if(APPLE)
+    target_link_libraries(smart_home_exec PRIVATE "-lcurl")
+else()
+    find_package(CURL REQUIRED)
+    target_link_libraries(smart_home_exec PRIVATE CURL::libcurl)
+endif()
+
+
 # Custom build + test target
 add_custom_target(build_and_test
         COMMAND echo "CMAKE_CURRENT_BINARY_DIR: ${CMAKE_CURRENT_BINARY_DIR}"
