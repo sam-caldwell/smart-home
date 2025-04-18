@@ -6,8 +6,11 @@
 
 void showHelp(){
     std::cout << "Commands:\n"
-              << " exit|quit - terminate program\n"
-              << " help|?    - show this screen\n"
+              << " exit|quit                       - terminate program\n"
+              << " help|?                          - show this screen\n"
+              << " thermostat set fan <on|off>     - turn on/off fan\n"
+              << " thermostat set mode <heat|cool> - set mode\n"
+              << " thermostat set temp <number>    - set temperature\n"
               << "\n"
               << getSmartRemark() << "\n"
               << std::endl;
