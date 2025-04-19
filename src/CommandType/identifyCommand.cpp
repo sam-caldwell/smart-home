@@ -16,7 +16,7 @@ CommandType identifyCommand(const std::string& cmd) {
                 {"lights",     CommandType::Lights},
                 {"vacuum",     CommandType::Vacuum},
                 {"television", CommandType::Television},
-                {"security",   CommandType::Security}
+                {"security",   CommandType::Security},
                 {"tic-tac-toe", CommandType::TicTacToe},
     };
 

@@ -5,5 +5,6 @@
 #include "Devices/Controllers/Thermostat/Thermostat.h"
 
 unsigned short Thermostat::getTemp() const {
-    return 0;
+    log->info("thermostat: temp = " + std::to_string(temperature));
+    return temperature;
 }

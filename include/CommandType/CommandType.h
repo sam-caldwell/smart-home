@@ -18,6 +18,7 @@ enum CommandType {
     Vacuum,
     Television,
     Security,
+    TicTacToe,
     Unknown
 };
 

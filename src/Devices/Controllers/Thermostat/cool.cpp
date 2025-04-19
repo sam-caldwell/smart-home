@@ -5,5 +5,6 @@
 #include "Devices/Controllers/Thermostat/Thermostat.h"
 
 void Thermostat::cool(){
+    log->info("thermostat: cool");
     modeState=ThermostatMode::cool;
 }

@@ -13,3 +13,9 @@ build:
 
 run:
 	./build/smart_home_exec
+
+me-stop:
+	kill $(shell ps aux | grep smart_home_exec | grep -v grep | awk '{print $$2}')
+
+stop-log-tail:
+	kill $(shell ps aux | grep tail | grep log | grep -v grep | awk '{print $$2}')
