@@ -5,5 +5,5 @@
 #include "Devices/Controllers/Thermostat/Thermostat.h"
 
 Thermostat::Thermostat(Logger* log, const std::string& connstr): WebEnabledDevice(log, connstr){
-    /*do nothing else*/
+    log->info("Thermostat is registered");
 };
