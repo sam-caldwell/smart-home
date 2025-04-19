@@ -4,23 +4,9 @@
 
 #include "Devices/Controllers/Thermostat/Thermostat.h"
 
-const std::string to_string(bool fanState) {
-    return fanState?"on":"off";
-}
 
-const std::string to_string(ThermostatMode modeState) {
-    switch(modeState){
-        case ThermostatMode::cool:
-          return "cool";
-        break;
-        case ThermostatMode::heat:
-          return "heat";
-        break;
-        default:
-            return "unknown";
-        break;
-    }
-}
+const std::string to_string(bool fanState);
+const std::string to_string(ThermostatMode modeState);
 
 // receive command-line input for processing.
 ParserResult Thermostat::sendCommand(std::vector<std::string> &args) {
@@ -90,4 +76,22 @@ ParserResult Thermostat::sendCommand(std::vector<std::string> &args) {
     }
 
     return ParserResult::error;
+}
+
+const std::string to_string(bool fanState) {
+    return fanState?"on":"off";
+}
+
+const std::string to_string(ThermostatMode modeState) {
+    switch(modeState){
+        case ThermostatMode::cool:
+            return "cool";
+        break;
+        case ThermostatMode::heat:
+            return "heat";
+        break;
+        default:
+            return "unknown";
+        break;
+    }
 }

@@ -13,7 +13,7 @@ class Device {
 public:
   Device(Logger *log);
   ~Device()=default;
-  ParserResult sendCommand(std::vector<std::string> &args);
+  virtual ParserResult sendCommand(std::vector<std::string> &args);
 protected:
   void getHealth();
   void getState();

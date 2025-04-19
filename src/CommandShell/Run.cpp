@@ -55,12 +55,12 @@ int CommandShell::Run() {
             	break; //keep going
 
             case ParserResult::ok:
-                log->info("Successfully executed command '" + input+"'");
-            break;
+//              log->info("Successfully executed '" + input+"'");
+                break;
 
             case ParserResult::emptyCommand:
                 log->error("No input provided.");
-            break;
+                break;
 
             default:
               // catch all because this should not happen...

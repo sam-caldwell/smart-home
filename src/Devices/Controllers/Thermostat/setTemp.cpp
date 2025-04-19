@@ -6,6 +6,7 @@
 #include <stdexcept>
 
 void Thermostat::setTemp(std::string &tempStr){
+  log->info("setting temperature to " + tempStr);
   try {
     int t = std::stoi(tempStr);
     if (t < 0 || t > 100) {

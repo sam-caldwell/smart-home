@@ -24,7 +24,6 @@ ParserResult CommandParser::parse(const std::string& inputRaw) {
             return ParserResult::exitCommand;
 
         case CommandType::Thermostat:
-            log->info("Thermostat");
         return invoke_device(devices, type, tokens);
 
         case CommandType::Lights:
