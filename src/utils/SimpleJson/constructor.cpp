@@ -1,9 +1,9 @@
-// SimpleJsonParser/constructor.cpp
+// SimpleJson/constructor.cpp
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Implementation of minimal JSON parser
 
-#include "SimpleJsonParser.h"
+#include "utils/SimpleJson/SimpleJson.h"
 
-SimpleJsonParser::SimpleJsonParser(const std::string &json) {
+SimpleJson::SimpleJson(const std::string &json) {
     parse(json);
 }

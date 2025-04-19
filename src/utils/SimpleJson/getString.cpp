@@ -1,10 +1,10 @@
-// SimpleJsonParser/getString.cpp
+// SimpleJson/getString.cpp
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Implementation of minimal JSON parser
 
-#include "SimpleJsonParser.h"
+#include "utils/SimpleJson/SimpleJson.h"
 
-std::string SimpleJsonParser::getString(const std::string &key) const {
+std::string SimpleJson::getString(const std::string &key) const {
 
     auto it = data.find(key);
 

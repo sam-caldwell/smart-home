@@ -1,4 +1,4 @@
-// SimpleJsonParser.h
+// SimpleJson.h
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Minimal JSON parser for known (FLAT) structure
 // Dependencies: None
@@ -19,9 +19,9 @@
 #include <string>
 #include <unordered_map>
 
-class SimpleJsonParser {
+class SimpleJson {
 public:
-    explicit SimpleJsonParser(const std::string &json);
+    explicit SimpleJson(const std::string &json);
 
     std::string getString(const std::string &key) const;
     int getInt(const std::string &key) const;

@@ -1,10 +1,10 @@
-// SimpleJsonParser/parse.cpp
+// SimpleJson/parse.cpp
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Implementation of minimal JSON parser
 
-#include "SimpleJsonParser.h"
+#include "utils/SimpleJson/SimpleJson.h"
 
-void SimpleJsonParser::parse(const std::string &json) {
+void SimpleJson::parse(const std::string &json) {
 
     std::string trimmed = json.substr(1, json.size() - 2); // remove { and }
 

@@ -1,8 +1,10 @@
-// SimpleJsonParser/getInt.cpp
+// SimpleJson/getInt.cpp
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Implementation of minimal JSON parser
 
-int SimpleJsonParser::getInt(const std::string &key) const {
+#include "utils/SimpleJson/SimpleJson.h"
+
+int SimpleJson::getInt(const std::string &key) const {
 
     auto it = data.find(key);
 
