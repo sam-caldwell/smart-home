@@ -4,9 +4,14 @@ add_executable(smart_home_exec src/main.cpp)
 target_include_directories(smart_home_exec PRIVATE ${PROJECT_ROOT}/include)
 target_sources(smart_home_exec PRIVATE
         src/utils/to_lower.cpp
+        src/utils/OnOff.cpp
         src/utils/getCurrentTimestamp.cpp
         src/utils/trim.cpp
         src/utils/getExecutableDir.cpp
+        src/utils/SimpleJson/constructor.cpp
+        src/utils/SimpleJson/getInt.cpp
+        src/utils/SimpleJson/getString.cpp
+        src/utils/SimpleJson/parse.cpp
         src/ParserResult/to_string.cpp
         src/Logger/error.cpp
         src/Logger/destructor.cpp
@@ -27,6 +32,7 @@ target_sources(smart_home_exec PRIVATE
         src/Devices/WebEnabledDevice/constructor.cpp
         src/Devices/WebEnabledDevice/setState.cpp
         src/Devices/WebEnabledDevice/getHealth.cpp
+        src/Devices/Controllers/Thermostat/ThermostatMode.cpp
         src/Devices/Controllers/Thermostat/setTemp.cpp
         src/Devices/Controllers/Thermostat/getDeviceState.cpp
         src/Devices/Controllers/Thermostat/heat.cpp

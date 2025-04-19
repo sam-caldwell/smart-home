@@ -5,10 +5,12 @@
 #ifndef THERMOSTAT_H
 #define THERMOSTAT_H
 #include <sstream>
+#include "utils/OnOff.h"
 #include "utils/StringUtils.h"
+#include "utils/SimpleJson/SimpleJson.h"
 #include "Logger/Logger.h"
 #include "ParserResult/ParserResult.h"
-#include <Devices/Controllers/Thermostat/ThermostatMode.h>
+#include "Devices/Controllers/Thermostat/ThermostatMode.h"
 #include "Devices/WebEnabledDevice/WebEnabledDevice.h"
 
 class Thermostat: public WebEnabledDevice {
@@ -27,7 +29,7 @@ private:
     ParserResult getDeviceState();
     ParserResult updateDeviceState();
 
-    bool fanState;
+    OnOff fanState;
     unsigned short temperature;
     ThermostatMode modeState;
 };

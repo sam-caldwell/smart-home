@@ -3,5 +3,5 @@
 
 void Thermostat::fanOn(){
   log->info("fanOn");
-  fanState=true;
+  fanState.on();
 }

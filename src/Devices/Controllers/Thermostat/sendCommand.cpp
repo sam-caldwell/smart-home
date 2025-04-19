@@ -4,13 +4,6 @@
 
 #include "Devices/Controllers/Thermostat/Thermostat.h"
 
-#define COMMAND_SET (subCommand == "set")
-
-const std::string to_string(bool fanState);
-
-//ToDo: move this to ThermostatMode.h
-const std::string to_string(ThermostatMode modeState);
-
 // receive command-line input for processing.
 ParserResult Thermostat::sendCommand(std::vector<std::string> &args) {
 
@@ -68,14 +61,14 @@ ParserResult Thermostat::sendCommand(std::vector<std::string> &args) {
         log->info("Thermostat::sendCommand: get");
         if (argc< 3){
             std::cout << "temp: "+std::to_string(temperature) << "\n"
-                      << "fan:  "+ to_string(fanState) << "\n"
+                      << "fan:  "+ fanState.string() << "\n"
                       << "mode: "+ to_string(modeState) << std::endl;
             return ParserResult::ok;
         } else {
             if (subject == "temp"){
               std::cout << "temp: "+std::to_string(temperature) << std::endl;
             }else if (subject == "fan"){
-              std::cout << "fan: "+to_string(fanState) << std::endl;
+              std::cout << "fan: "+fanState.string() << std::endl;
             }else if (subject == "mode"){
               std::cout << "mode: "+to_string(modeState) << std::endl;
             }else{
@@ -90,22 +83,3 @@ ParserResult Thermostat::sendCommand(std::vector<std::string> &args) {
     return ParserResult::badCommand;
 }
 
-const std::string to_string(bool fanState) {
-    return fanState?"on":"off";
-}
-
-
-//ToDo: move this to ThermostatMode.cpp
-const std::string to_string(ThermostatMode modeState) {
-    switch(modeState){
-        case ThermostatMode::cool:
-            return "cool";
-        break;
-        case ThermostatMode::heat:
-            return "heat";
-        break;
-        default:
-            return "unknown";
-        break;
-    }
-}
