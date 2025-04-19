@@ -7,6 +7,8 @@
 #define COMMAND_SET (subCommand == "set")
 
 const std::string to_string(bool fanState);
+
+//ToDo: move this to ThermostatMode.h
 const std::string to_string(ThermostatMode modeState);
 
 // receive command-line input for processing.
@@ -92,6 +94,8 @@ const std::string to_string(bool fanState) {
     return fanState?"on":"off";
 }
 
+
+//ToDo: move this to ThermostatMode.cpp
 const std::string to_string(ThermostatMode modeState) {
     switch(modeState){
         case ThermostatMode::cool:
