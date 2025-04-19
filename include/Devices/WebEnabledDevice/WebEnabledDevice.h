@@ -13,7 +13,6 @@ class WebEnabledDevice: public Device {
 public:
     WebEnabledDevice(Logger *log, const std::string &connstr);
     ~WebEnabledDevice();
-//    virtual ParserResult sendCommand(std::vector<std::string> &args);
 protected:
     void getHealth();
     void getState();
