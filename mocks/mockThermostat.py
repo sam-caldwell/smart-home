@@ -9,8 +9,8 @@ app = Flask(__name__)
 
 # Initial state of the mocks thermostat
 thermostat_state = {
-    "mode": "cool",  # or "heat"
-    "fan": "off",  # or "on"
+    "mode": "heat",  # or "heat"
+    "fan": "on",  # or "on"
     "temp": 72  # integer temp
 }
 
