@@ -1,28 +1,40 @@
-# 🏠 Smart Home Automation Control System
-=========================================
+# Smart Home Automation Control System
 
-A simple smart home automation system.
+A lightweight, extensible smart home automation platform driven by a command-line interface. No unnecessary GUIs—just efficient, scriptable control over your smart devices using REST APIs.
 
-## Features:
+---
 
-1. It is a CLI because who needs yet another web interface?
-2. It uses `libcurl` to call external APIs to control devices.
-3. It is extensible. You can add more devices.
-4. Technically this should mean the path to speech-to-command should be easier.
+## Features
 
-## Usage
+- **Command-Line Interface**  
+  Who needs another web UI? Take full control directly from the terminal.
 
-### To build:
+- **HTTP API Integration**  
+  Leverages `libcurl` to interface with smart devices via REST endpoints.
 
-```shell
+- **Easily Extensible**  
+  Add new devices by subclassing—minimal boilerplate required.
+
+- **Speech-to-Command Ready**  
+  Designed with future integration paths for voice control systems.
+
+---
+
+## Build Instructions
+
+> Builds the CLI and launches Docker-based mock devices.
+
+```bash
 make clean build
 ```
 
-(Note: this will also start the docker containers for
-the mock API endpoints to simulate devices....needs work.)
-
-### To Run
-
-```shell
+## Run the Application
+```bash
 make run
 ```
+
+## Dependencies
+* C++20-compatible compiler (clang++, g++)
+* libcurl (preinstalled on macOS via Xcode)
+* Docker (for running mock device APIs)
+* CMake 3.27+
