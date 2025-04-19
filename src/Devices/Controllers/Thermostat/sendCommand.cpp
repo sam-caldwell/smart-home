@@ -47,10 +47,15 @@ ParserResult Thermostat::sendCommand(std::vector<std::string> &args) {
               cool();
             else if (strValue == "heat")
               heat();
-            else
-              return ParserResult::invalidArgument;
-        else
+            else {
+              std::cout << "I'm not sure what you're trying to do. But we don't do that around here."
+                        << std::endl;
+              return ParserResult::badCommand;
+            }
+        else{
+          std::cout << "You're not doing it right!" << std::endl;
           return ParserResult::badCommand;
+        }
         // Now that internal state is updated, call the API to update the state.
         return updateDeviceState();
 
@@ -69,11 +74,15 @@ ParserResult Thermostat::sendCommand(std::vector<std::string> &args) {
             }else if (subject == "mode"){
               std::cout << "mode: "+to_string(modeState) << std::endl;
             }else{
+                std::cout << "That's illegal in this county."
+                          << std::endl;
                 return ParserResult::badCommand;
             }
+            return ParserResult::ok;
         }
     }
-    return ParserResult::error;
+    std::cout << "I'm pretty sure that's illegal in this county." << std::endl;
+    return ParserResult::badCommand;
 }
 
 const std::string to_string(bool fanState) {
