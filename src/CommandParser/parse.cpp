@@ -7,7 +7,7 @@
 // Parse command-line inputs and execute the result
 ParserResult CommandParser::parse(const std::string& inputRaw) {
     //strip the commandline string and make it case insensitive
-    std::string input = toLower(trim(inputRaw));
+    std::string input = to_lower(trim(inputRaw));
 
     // bail if empty
     if (input.empty()) return ParserResult::emptyCommand;

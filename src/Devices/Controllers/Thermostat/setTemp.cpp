@@ -11,6 +11,9 @@ void Thermostat::setTemp(const std::string &tempStr){
     int t = std::stoi(tempStr);
     if (t < 0 || t > 100) {
       log->error("Temperature out of range: " + tempStr);
+      std::cout << "I'm sorry, Dave.  I can't do that.  Temperature is out of range.\n"
+                << "But if you'd like I can vent you from the airlock later in the movie."
+                << std::endl;
       return;
     }
     temperature = static_cast<unsigned short>(t);
