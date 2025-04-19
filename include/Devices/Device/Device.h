@@ -11,13 +11,25 @@
 
 class Device {
 public:
+
   Device(Logger *log);
+
   ~Device()=default;
+
+  //process device-specific commands
   virtual ParserResult sendCommand(std::vector<std::string> &args);
+
 protected:
+
+  // check device health
   void getHealth();
-  void getState();
+
+  // get the remote device state and update internal state
+  virtual const std::string getRemoteState();
+
+  // update the remote device state
   void setState(const std::string &body);
+
   Logger *log;
 };
 

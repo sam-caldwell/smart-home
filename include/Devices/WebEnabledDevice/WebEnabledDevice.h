@@ -15,7 +15,7 @@ public:
     ~WebEnabledDevice();
 protected:
     void getHealth();
-    void getState();
+    const std::string getRemoteState() override;
     void setState(const std::string &body);
 private:
     HttpClient *http;

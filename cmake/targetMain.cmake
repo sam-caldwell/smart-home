@@ -17,12 +17,12 @@ target_sources(smart_home_exec PRIVATE
         src/HttpClient/constructor.cpp
         src/HttpClient/post.cpp
         src/HttpClient/get.cpp
-        src/Devices/Device/GetState.cpp
+        src/Devices/Device/getRemoteState.cpp
         src/Devices/Device/sendCommand.cpp
         src/Devices/Device/constructor.cpp
         src/Devices/Device/setState.cpp
         src/Devices/Device/GetHealth.cpp
-        src/Devices/WebEnabledDevice/getState.cpp
+        src/Devices/WebEnabledDevice/getRemoteState.cpp
         src/Devices/WebEnabledDevice/destructor.cpp
         src/Devices/WebEnabledDevice/constructor.cpp
         src/Devices/WebEnabledDevice/setState.cpp
