@@ -5,6 +5,6 @@
 #include "Devices/Controllers/Thermostat/Thermostat.h"
 
 ParserResult Thermostat::updateDeviceState(){
-    //ToDo: implement this
+    log->info("Thermostat::updateDeviceState() not implemented yet");
     return ParserResult::ok;
 }

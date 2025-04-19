@@ -6,4 +6,5 @@
 
 Thermostat::Thermostat(Logger* log, const std::string& connstr): WebEnabledDevice(log, connstr){
     log->info("Thermostat is registered");
+    getDeviceState();
 };
