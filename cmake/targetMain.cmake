@@ -3,7 +3,7 @@
 add_executable(smart_home_exec src/main.cpp)
 target_include_directories(smart_home_exec PRIVATE ${PROJECT_ROOT}/include)
 target_sources(smart_home_exec PRIVATE
-        src/utils/toLower.cpp
+        src/utils/to_lower.cpp
         src/utils/getCurrentTimestamp.cpp
         src/utils/trim.cpp
         src/utils/getExecutableDir.cpp

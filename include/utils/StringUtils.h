@@ -15,6 +15,6 @@
 std::string trim(const std::string& str);
 
 // Utility to convert a string to lowercase
-std::string toLower(const std::string& str);
+std::string to_lower(const std::string& str);
 
 #endif // STRING_UTILS_H

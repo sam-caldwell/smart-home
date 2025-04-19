@@ -5,6 +5,7 @@
 #ifndef THERMOSTAT_H
 #define THERMOSTAT_H
 #include <sstream>
+#include "utils/StringUtils.h"
 #include "Logger/Logger.h"
 #include "ParserResult/ParserResult.h"
 #include <Devices/Controllers/Thermostat/ThermostatMode.h>
@@ -16,7 +17,7 @@ public:
 
     ParserResult sendCommand(std::vector<std::string> &args) override;
 private:
-    void setTemp(std::string &temp);
+    void setTemp(const std::string &temp);
     unsigned short getTemp() const;
     void fanOn();
     void fanOff();

@@ -3,7 +3,7 @@
 add_executable(test_program test/main.cpp test/main.cpp)
 target_include_directories(test_program PRIVATE ${PROJECT_ROOT}/include)
 target_sources(test_program PRIVATE
-        src/utils/toLower.cpp
+        src/utils/to_lower.cpp
         src/utils/getCurrentTimestamp.cpp
         src/utils/trim.cpp
         src/utils/getExecutableDir.cpp

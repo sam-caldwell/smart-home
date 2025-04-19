@@ -5,7 +5,7 @@
 #include "Devices/Controllers/Thermostat/Thermostat.h"
 #include <stdexcept>
 
-void Thermostat::setTemp(std::string &tempStr){
+void Thermostat::setTemp(const std::string &tempStr){
   log->info("setting temperature to " + tempStr);
   try {
     int t = std::stoi(tempStr);
