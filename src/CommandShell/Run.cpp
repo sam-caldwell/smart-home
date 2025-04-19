@@ -40,7 +40,6 @@ int CommandShell::Run() {
 
         // evaluate the result...keep running or terminate?
         switch (result) {
-
             case ParserResult::exitCommand:
                 return success; //Terminate
 

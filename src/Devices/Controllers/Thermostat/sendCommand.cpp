@@ -4,6 +4,7 @@
 
 #include "Devices/Controllers/Thermostat/Thermostat.h"
 
+#define COMMAND_SET (subCommand == "set")
 
 const std::string to_string(bool fanState);
 const std::string to_string(ThermostatMode modeState);
@@ -15,66 +16,63 @@ ParserResult Thermostat::sendCommand(std::vector<std::string> &args) {
 
     int argc = args.size();
 
-    // Understand what we are doing set|get and update internal state
-    if (argc < 2){
+    if ((argc < 2) || (argc > 4)){
         log->error("Thermostat::sendCommand: wrong number of arguments");
         return ParserResult::missingArgument;
     }
 
-    if (args[1] == "set"){
+    const std::string subCommand = to_lower(args[1]);
+    const std::string subject = (argc>=3) ? to_lower(args[2]) : "";
+    const std::string strValue = (argc==4) ? to_lower(args[3]) : "";
+
+    if (subCommand == "set"){
         log->info("Thermostat::sendCommand: set");
-        if (argc< 3){
-            log->error("Thermostat::sendCommand: wrong number of arguments");
-            return ParserResult::missingArgument;
-        }
-        if (args[2] == "temp"){
-            if (argc < 4) {
-              log->error("Thermostat::sendCommand: wrong number of arguments");
+        if (subject == "temp")
+            if (strValue == "")
               return ParserResult::missingArgument;
-            }
-            log->info("Thermostat::sendCommand: temperature");
-            setTemp(args[3]);
-
-        } else if (args[2] == "fan"){
-            if (argc < 4) return ParserResult::missingArgument;
-            else if (args[3] == "on") fanOn();
-            else if (args[3] == "off") fanOff();
+            else
+                setTemp(strValue);
+        else if (subject == "fan")
+            if (strValue == "")
+              return ParserResult::missingArgument;
+            else if (strValue == "on")
+              fanOn();
+            else if (strValue == "off")
+              fanOff();
             else return ParserResult::invalidArgument;
-
-        } else if (args[2] == "mode") {
-            if (argc < 4) return ParserResult::missingArgument;
-            else if (args[3] == "cool") cool();
-            else if (args[3] == "heat") heat();
-            else return ParserResult::invalidArgument;
-
-        } else {
-          log->error("Thermostat::sendCommand: unknown command");
+        else if (subject == "mode")
+            if (strValue == "")
+              return ParserResult::missingArgument;
+            else if (strValue == "cool")
+              cool();
+            else if (strValue == "heat")
+              heat();
+            else
+              return ParserResult::invalidArgument;
+        else
           return ParserResult::badCommand;
-        }
         // Now that internal state is updated, call the API to update the state.
         return updateDeviceState();
 
-    } else if ( args[1] == "get"){
+    } else if ( subCommand == "get") {
         log->info("Thermostat::sendCommand: get");
         if (argc< 3){
             std::cout << "temp: "+std::to_string(temperature) << "\n"
                       << "fan:  "+ to_string(fanState) << "\n"
-                      << "mode: "+ to_string(modeState) << "\n";
+                      << "mode: "+ to_string(modeState) << std::endl;
             return ParserResult::ok;
-        }else{
-            if (args[2] == "temp"){
-
-            }else if (args[2] == "fan"){
-
-            }else if (args[2] == "mode"){
-
+        } else {
+            if (subject == "temp"){
+              std::cout << "temp: "+std::to_string(temperature) << std::endl;
+            }else if (subject == "fan"){
+              std::cout << "fan: "+to_string(fanState) << std::endl;
+            }else if (subject == "mode"){
+              std::cout << "mode: "+to_string(modeState) << std::endl;
             }else{
-                log->error("Thermostat::sendCommand: unknown command");
                 return ParserResult::badCommand;
             }
         }
     }
-
     return ParserResult::error;
 }
 
