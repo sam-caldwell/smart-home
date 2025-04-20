@@ -2,3 +2,4 @@ CMakeCache.txt
 .idea/
 build/cmake-build-*/
 build/
+cmake-build-debug/
