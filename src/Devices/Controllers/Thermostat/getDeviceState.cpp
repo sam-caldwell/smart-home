@@ -13,16 +13,19 @@ ParserResult Thermostat::getDeviceState(){
         SimpleJson parser(json);
 
         {
+            log->info("parsing fan state");
             const std::string rawFan=parser.getString("fan");
             this->fanState.set(rawFan);
             log->info("fanState: " + rawFan+ " stored as " + this->fanState.string());
         }
         {
+            log->info("parsing mode");
             const std::string rawMode = parser.getString("mode");
            this->modeState = to_thermostat_mode(rawMode);
             log->info("modeState: " + rawMode + " stored as " + to_string(this->modeState));
         }
         {
+            log->info("parsing temperature");
             const std::string rawTemp=parser.getString("temp");
             this->temperature = parser.getInt("temp");
             log->info("temp " + rawTemp + " stored as " + std::to_string(this->temperature));

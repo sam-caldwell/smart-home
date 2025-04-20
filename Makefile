@@ -55,3 +55,9 @@ run-docker: kill-docker mockery
 
 stop-log-tail:
 	kill $(shell ps aux | grep tail | grep log | grep -v grep | awk '{print $$2}')
+
+tree:
+	cmake --build build --target generate_file_tree
+
+zip: clean configure tree
+	cmake --build build --target zip_submission
