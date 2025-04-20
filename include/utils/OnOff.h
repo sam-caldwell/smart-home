@@ -28,20 +28,24 @@ public:
     }
 
     // Get state as string
-    std::string string() const {  return state ? vOn : vOff;}
+    [[nodiscard]] std::string string() const {  return state ? vOn : vOff;}
 
     // Get state as bool
-    bool boolean() const { return state; }
+    [[nodiscard]] bool boolean() const { return state; }
 
     // Toggle state
     void toggle() { state = !state; }
 
-    void on() { state=true; }
+    void on() {
+        state=true;
+    }
 
-    void off() { state=false; }
+    void off() {
+        state=false;
+    }
 
 private:
-    bool state;
+    bool state{};
 
     static const std::string vOn;
     static const std::string vOff;

@@ -15,6 +15,7 @@ int main(int, char *argv[]) {
     Logger log(getExecutableDir(argv[0]) + "/smart-home.log");
     log.info("File logger initialized.");
     try {
+        log.info("Starting...");
         CommandShell cli(&log);
         return cli.Run(); // return an exit code
     } catch (const std::runtime_error &e) {

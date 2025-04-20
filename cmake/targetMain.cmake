@@ -33,7 +33,7 @@ target_sources(smart_home_exec PRIVATE
         src/Devices/WebEnabledDevice/getRemoteState.cpp
         src/Devices/WebEnabledDevice/destructor.cpp
         src/Devices/WebEnabledDevice/constructor.cpp
-        src/Devices/WebEnabledDevice/setState.cpp
+        src/Devices/WebEnabledDevice/setRemoteState.cpp
         src/Devices/WebEnabledDevice/getHealth.cpp
         src/Devices/Controllers/Thermostat/ThermostatMode.cpp
         src/Devices/Controllers/Thermostat/setTemp.cpp
