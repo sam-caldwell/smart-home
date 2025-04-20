@@ -18,11 +18,15 @@ int main(int, char *argv[]) {
         log.info("Starting...");
         CommandShell cli(&log);
         return cli.Run(); // return an exit code
+    } catch (const std::runtime_error &e) {
+        std::cout << e.what() << std::endl;
+        log.fatal(e.what(), runtime_error);
     } catch (const std::exception &e) {
-        log.fatal(e.what(), generic_error);
         std::cout << "an unhandled error occurred.  Check the logs." << std::endl;
+        log.fatal(e.what(), generic_error);
         return generic_error;
     } catch (...) {
+        std::cout << "an unknown error occurred.  Check the logs." << std::endl;
         log.fatal("unknown error occurred ", unknown_error);
         return unknown_error;
     }
