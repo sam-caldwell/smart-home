@@ -10,7 +10,7 @@ ParserResult Thermostat::updateDeviceState(){
     SimpleJson json;
     json.set("temp",temperature);
     json.set("fan", fanState.string());
-    json.set("mode", modeState);
+    json.set("mode", to_string(modeState));
     if (setRemoteState(json.stringify()))
         std::cout << "remote state updated" << std::endl;
     else

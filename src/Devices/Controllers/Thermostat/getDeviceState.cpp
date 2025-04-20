@@ -19,16 +19,17 @@ ParserResult Thermostat::getDeviceState(){
             log->info("fanState: " + rawFan+ " stored as " + this->fanState.string());
         }
         {
-            log->info("parsing mode");
-            const std::string rawMode = parser.getString("mode");
+           log->info("parsing mode");
+           const std::string rawMode = parser.getString("mode");
+           log->info("rawMode: " + rawMode);
            this->modeState = to_thermostat_mode(rawMode);
-            log->info("modeState: " + rawMode + " stored as " + to_string(this->modeState));
+           log->info("modeState: " + rawMode + " stored as " + to_string(this->modeState));
         }
         {
             log->info("parsing temperature");
             const std::string rawTemp=parser.getString("temp");
             this->temperature = parser.getInt("temp");
-            log->info("temp " + rawTemp + " stored as " + std::to_string(this->temperature));
+            log->info("temp '" + rawTemp + "' stored as '" + std::to_string(this->temperature)+"'");
         }
 
     }catch(...){
