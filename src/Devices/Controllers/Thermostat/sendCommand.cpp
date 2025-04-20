@@ -20,9 +20,6 @@ ParserResult Thermostat::sendCommand(std::vector<std::string> &args) {
     const std::string subject = (argc>=3) ? to_lower(args[2]) : "";
     const std::string strValue = (argc==4) ? to_lower(args[3]) : "";
 
-    //Update internal state from the device before we do anything.
-    getDeviceState();
-
     if (subCommand == "set"){
         log->info("Thermostat::sendCommand: set");
         if (subject == "temp")
@@ -58,6 +55,9 @@ ParserResult Thermostat::sendCommand(std::vector<std::string> &args) {
         return updateDeviceState();
 
     } else if ( subCommand == "get") {
+        //Update internal state from the device before we do anything.
+        getDeviceState();
+
         log->info("Thermostat::sendCommand: get");
         if (argc< 3){
             std::cout << "temp: "+std::to_string(temperature) << "\n"
