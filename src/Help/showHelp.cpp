@@ -14,7 +14,7 @@ void showHelp(){
               << " thermostat get                  - get current thermostat state\n"
               << " light <name> <on|off>           - turn on/off a specific light\n"
               << " light get                       - show current light state\n"
-              << " security <arm|disarm>           - arm or disarm security\n"
+              << " security set <arm|disarm>       - arm or disarm security\n"
               << " security get                    - show current security state\n"
               << " vacuum schedule <time>          - schedule a time for vacuum to run\n"
               << " vacuum cancel                   - cancel a current vacuum run\n"
