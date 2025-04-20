@@ -33,13 +33,14 @@ COPY . /opt/
 WORKDIR /opt/
 
 # Create build directory and compile
-RUN make clean
-RUN make build
+#RUN make clean
+#RUN make build
 
 # ===============================
 # Stage 4 - Runtime (distroless)
 # ===============================
-FROM gcr.io/distroless/cc AS runtime
+FROM base AS runtime
+ENV HOST_IP="127.0.0.1"
 ENV LIGHTS=8001
 ENV SECURITY=8002
 ENV TELEVISION=8003

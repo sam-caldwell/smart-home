@@ -1,4 +1,3 @@
-# File: cmake/GetHostIP.cmake
 function(get_host_ip HOST_IP)
     if(UNIX AND NOT APPLE)
         # Linux: get IP from the first non-loopback interface
@@ -31,4 +30,5 @@ function(get_host_ip HOST_IP)
 
     set(${HOST_IP} ${IP_RAW} PARENT_SCOPE)
 endfunction()
+
 get_host_ip(HOST_IP)

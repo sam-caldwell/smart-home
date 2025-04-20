@@ -3,4 +3,12 @@ CMakeCache.txt
 build/cmake-build-*/
 build/
 cmake-build-debug/
+build/
+README.md
+docs/
+mocks/
+test/
+.editorconfig
+.gitignore
+Dockerfile
 cmake_install.cmake

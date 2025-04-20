@@ -4,7 +4,6 @@
 
 set(DOCKERFILE "${PROJECT_ROOT}/mocks/Dockerfile")
 
-get_host_ip(HOST_IP)
 set(API_MOCK_LIGHTS "${HOST_IP}:8001")
 set(API_MOCK_SECURITY "${HOST_IP}:8002")
 set(API_MOCK_TELEVISION "${HOST_IP}:8003")
