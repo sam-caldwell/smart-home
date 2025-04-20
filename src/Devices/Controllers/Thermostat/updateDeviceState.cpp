@@ -6,7 +6,6 @@
 #include <stdexcept>
 
 ParserResult Thermostat::updateDeviceState(){
-    log->info("Thermostat::updateDeviceState() not implemented yet");
     SimpleJson json;
     json.set("temp",temperature);
     json.set("fan", fanState.string());
