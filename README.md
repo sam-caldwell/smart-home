@@ -24,6 +24,7 @@ A lightweight, extensible smart home automation platform driven by a command-lin
 
 > Builds the CLI and launches Docker-based mock devices.
 
+<b><span style="color:red">FOR WINDOWS USERS...USE WSL2. THIS WILL NOT COMPILE WITHOUT WSL/WSL2</span></b>
 ```bash
 make clean build
 ```

@@ -9,6 +9,9 @@ configure:
 	# Configure CMake project
 	cmake -S . -B build
 
+configure-no-tests:
+	cmake -S . -B build -DFF_TEST_ENABLE=OFF
+
 build:
 	cmake --build build --target build
 
