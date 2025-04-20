@@ -4,11 +4,12 @@
 
 set(DOCKERFILE "${PROJECT_ROOT}/mocks/Dockerfile")
 
-set(API_MOCK_LIGHTS "127.0.0.1:8001")
-set(API_MOCK_SECURITY "127.0.0.1:8002")
-set(API_MOCK_TELEVISION "127.0.0.1:8003")
-set(API_MOCK_THERMOSTAT "127.0.0.1:8004")
-set(API_MOCK_VACUUM "127.0.0.1:8005")
+get_host_ip(HOST_IP)
+set(API_MOCK_LIGHTS "${HOST_IP}:8001")
+set(API_MOCK_SECURITY "${HOST_IP}:8002")
+set(API_MOCK_TELEVISION "${HOST_IP}:8003")
+set(API_MOCK_THERMOSTAT "${HOST_IP}:8004")
+set(API_MOCK_VACUUM "${HOST_IP}:8005")
 
 add_custom_target(mockery
         COMMENT "Starting mock Thermostat on port 8000..."
@@ -37,8 +38,8 @@ add_custom_target(mockery
         COMMAND ${CMAKE_COMMAND} -E sleep 1
         COMMAND ${CMAKE_COMMAND} -E echo "Verifying containers..."
         COMMAND bash -c "for i in 1 2 3 4 5; do \
-            echo 'Verifying http://127.0.0.1:800'$i; \
-            curl --fail http://127.0.0.1:800$i/api/v1/health || (echo 'Failed at '$i; exit 1); \
+            echo 'Verifying http://${HOST_IP}:800'$i; \
+            curl --fail http://${HOST_IP}:800$i/api/v1/health || (echo 'Failed at '$i; exit 1); \
             echo ''; \
         done"
         VERBATIM
