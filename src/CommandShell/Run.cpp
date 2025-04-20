@@ -10,13 +10,12 @@
 #include "CommandShell/CommandShell.h"
 
 int CommandShell::Run() {
-
     //Fancy Prompt...
     // ToDo: we could even steal from my old ANSI colors library if we wanted to...and have time...
     // See https://github.com/sam-caldwell/monorepo/tree/main/cpp/common/AnsiColors
     //
     const char space = ' ';
-    const std::string prompt = getCurrentTimestamp()+">";
+    const std::string prompt = getCurrentTimestamp() + ">";
 
     // CommandParser doesn't need to be part of the class instance.
     // We only use it here.  KISS!
@@ -32,29 +31,30 @@ int CommandShell::Run() {
         // get the command line input
         std::string input;
         std::getline(std::cin, input);
-        log->info("command (raw): '" + input+"'");
+        log->info("command (raw): '" + input + "'");
 
         // Parse the command-line and execute it, collect a result
         ParserResult result = parser.parse(input);
-        log->info("Parsed command '" + input+"' result: '" + to_string(result) + "'");
+        log->info("Parsed command '" + input + "' result: '" + to_string(result) + "'");
 
         // evaluate the result...keep running or terminate?
         switch (result) {
             case ParserResult::exitCommand:
                 return success; //Terminate
+                break;
 
             case ParserResult::badCommand:
                 log->error("Bad or Unrecognized command.");
                 std::cout << "Use ? or help for usage." << std::endl;
-            	break;  //keep going
+                break; //keep going
 
             case ParserResult::missingArgument:
                 log->error("Missing argument.");
                 std::cout << "Use ? or help for usage." << std::endl;
-            	break; //keep going
+                break; //keep going
 
             case ParserResult::ok:
-//              log->info("Successfully executed '" + input+"'");
+                //              log->info("Successfully executed '" + input+"'");
                 break;
 
             case ParserResult::emptyCommand:
@@ -62,10 +62,10 @@ int CommandShell::Run() {
                 break;
 
             default:
-              // catch all because this should not happen...
-              log->error("Unknown parser outcome (programmatic error)");
-              return runtime_error;
-              break;
+                // catch all because this should not happen...
+                log->error("Unknown parser outcome (programmatic error)");
+                return runtime_error;
+                break;
         }
     }
     return 0;
