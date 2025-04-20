@@ -16,7 +16,8 @@
 
 #include "Logger/Logger.h"
 #include "utils/StringUtils.h"
-
+#include "utils/getHostIp.h"
+#include "utils/getPort.h"
 #include <Help/Help.h>
 #include "CommandType/CommandType.h"
 #include "ParserResult/ParserResult.h"
@@ -25,21 +26,24 @@
 #include "Devices/WebEnabledDevice/WebEnabledDevice.h"
 #include "Devices/Factory/DeviceFactory.h"
 
+
 using TokenList = std::vector<std::string>;
 
 class CommandParser {
 public:
-    explicit CommandParser(Logger* log);
+    explicit CommandParser(Logger *log);
+
     ~CommandParser();
-    ParserResult parse(const std::string& input);
+
+    ParserResult parse(const std::string &input);
 
     using CommandArgs = std::vector<std::string>;
 
 private:
-    Logger* log;
+    Logger *log;
 
     // convert string into space-delimited tokens
-    TokenList tokenize(const std::string& input);
+    TokenList tokenize(const std::string &input);
 
     // safely invoke device controller
     ParserResult invoke_device(DeviceMap devices, CommandType cmd, CommandArgs &args);
@@ -49,4 +53,3 @@ private:
 };
 
 #endif // COMMAND_PARSER_H
-

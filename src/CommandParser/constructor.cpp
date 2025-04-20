@@ -6,21 +6,22 @@
 
 CommandParser::CommandParser(Logger* log) : log(log) {
 
-  	const std::unordered_map<CommandType, std::string> endpoints = {
-  		// {CommandType::Lights, "http://127.0.0.1:8001"},
-  		// {CommandType::Security, "http://127.0.0.1:8002"},
-  		// {CommandType::Television, "http://127.0.0.1:8003"},
-    	{CommandType::Thermostat, "http://127.0.0.1:8004"},
-  		// {CommandType::Vacuum, "http://127.0.0.1:8005"},
-	};
+    const std::string baseUrl = "http://"+getHostIp();
+    const std::unordered_map<CommandType, std::string> endpoints = {
+        // {CommandType::Lights, baseUrl+getPort("Lights")},
+        // {CommandType::Security, baseUrl+getPort("Security")},
+        // {CommandType::Television, baseUrl+getPort("Television")},
+        {CommandType::Thermostat, baseUrl+getPort("Thermostat")},
+        // {CommandType::Vacuum, baseUrl+getPort("Vacuum")},
+    };
 
     for (const auto& [type, endpoint] : endpoints) {
-    	auto device = DeviceFactory::create(type, log, endpoint);
-    	if (device) {
-        	devices[type] = std::move(device);
-    	} else {
-        	log->error("Failed to initialize device for type " + std::to_string(static_cast<int>(type)));
-    	}
-	}
+        auto device = DeviceFactory::create(type, log, endpoint);
+        if (device) {
+            devices[type] = std::move(device);
+        } else {
+            log->error("Failed to initialize device for type " + std::to_string(static_cast<int>(type)));
+        }
+    }
 }
 
