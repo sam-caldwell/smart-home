@@ -20,8 +20,10 @@ int main(int, char *argv[]) {
         return cli.Run(); // return an exit code
     } catch (const std::runtime_error &e) {
         log.fatal(e.what(), runtime_error);
+        std::cout << "an error occurred.  Check the logs." << std::endl;
     } catch (const std::exception &e) {
         log.fatal(e.what(), generic_error);
+        std::cout << "an unhandled error occurred.  Check the logs." << std::endl;
     } catch (...) {
         log.fatal("unknown error occurred ", unknown_error);
     }
