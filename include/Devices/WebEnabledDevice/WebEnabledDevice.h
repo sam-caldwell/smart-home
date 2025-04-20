@@ -12,11 +12,11 @@
 class WebEnabledDevice: public Device {
 public:
     WebEnabledDevice(Logger *log, const std::string &connstr);
-    ~WebEnabledDevice();
+    ~WebEnabledDevice() override;
 protected:
-    void getHealth();
+    void getHealth() override;
     const std::string getRemoteState() override;
-    const bool setRemoteState(const std::string &body);
+    const bool setRemoteState(const std::string &body) override;
 private:
     HttpClient *http;
 

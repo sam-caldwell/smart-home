@@ -7,9 +7,13 @@
 
 ParserResult Thermostat::updateDeviceState(){
     log->info("Thermostat::updateDeviceState() not implemented yet");
-    //
-    // ToDo: craft the json string with the update
-    //       send the state to the server.
-    //
+    SimpleJson json;
+    json.set("temp",temperature);
+    json.set("fan", fanState.string());
+    json.set("mode", modeState);
+    if (setRemoteState(json.stringify()))
+        std::cout << "remote state updated" << std::endl;
+    else
+        std::cout << "we shoudl add retry logic at least" << std::endl;
     return ParserResult::ok;
 }

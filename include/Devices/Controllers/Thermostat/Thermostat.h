@@ -16,7 +16,7 @@
 class Thermostat: public WebEnabledDevice {
 public:
     explicit Thermostat(Logger* log, const std::string& connstr);
-
+    ~Thermostat() override {};
     ParserResult sendCommand(std::vector<std::string> &args) override;
 private:
     void setTemp(const std::string &temp);

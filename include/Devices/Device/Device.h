@@ -11,31 +11,26 @@
 
 class Device {
 public:
+    Device(Logger *log);
 
-  Device(Logger *log);
+    virtual ~Device() = default;
 
-  ~Device()=default;
-
-  //process device-specific commands
-  virtual ParserResult sendCommand(std::vector<std::string> &args);
+    //process device-specific commands
+    virtual ParserResult sendCommand(std::vector<std::string> &args);
 
 protected:
+    // check device health
+    virtual void getHealth();
+    // get the remote device state and update internal state
+    virtual const std::string getRemoteState();
+    // set the remote device state
+    virtual const bool setRemoteState(const std::string &body);
 
-  // check device health
-  void getHealth();
-
-  // get the remote device state and update internal state
-  virtual const std::string getRemoteState();
-  virtual const bool setRemoteState(const std::string &body);
-
-  // update the remote device state
-  void setState(const std::string &body);
-
-  Logger *log;
+    Logger *log;
 };
 
 // Alias for mapping commands to smart device instances
-using DevicePtr = Device*;
+using DevicePtr = Device *;
 
 using DeviceMap = std::unordered_map<CommandType, DevicePtr>;
 

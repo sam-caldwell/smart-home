@@ -15,6 +15,7 @@ target_sources(smart_home_exec PRIVATE
         src/utils/SimpleJson/getInt.cpp
         src/utils/SimpleJson/getString.cpp
         src/utils/SimpleJson/parse.cpp
+        src/utils/SimpleJson/stringify.cpp
         src/ParserResult/to_string.cpp
         src/Logger/error.cpp
         src/Logger/destructor.cpp
@@ -25,11 +26,11 @@ target_sources(smart_home_exec PRIVATE
         src/HttpClient/constructor.cpp
         src/HttpClient/post.cpp
         src/HttpClient/get.cpp
-        src/Devices/Device/getRemoteState.cpp
         src/Devices/Device/sendCommand.cpp
         src/Devices/Device/constructor.cpp
-        src/Devices/Device/setState.cpp
-        src/Devices/Device/GetHealth.cpp
+        src/Devices/Device/getRemoteState.cpp
+        src/Devices/Device/setRemoteState.cpp
+        src/Devices/Device/getHealth.cpp
         src/Devices/WebEnabledDevice/getRemoteState.cpp
         src/Devices/WebEnabledDevice/destructor.cpp
         src/Devices/WebEnabledDevice/constructor.cpp
