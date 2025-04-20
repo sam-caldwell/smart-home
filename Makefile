@@ -32,7 +32,15 @@ package:
 	docker build --tag ${DOCKER_IMAGE} .
 
 run:
-	./build/smart_home_exec
+	@( \
+		export HOST_IP=$(shell make get-ip); \
+		export PORT_LIGHTS=8001; \
+        export PORT_SECURITY=8002; \
+        export PORT_TELEVISION=8003; \
+        export PORT_THERMOSTAT=8004; \
+        export PORT_VACCUM=8005; \
+		./build/smart_home_exec \
+	)
 
 CONTAINER_NAME:=smart-home
 kill-docker:

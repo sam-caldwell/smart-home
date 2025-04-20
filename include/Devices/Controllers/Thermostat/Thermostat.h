@@ -20,7 +20,7 @@ public:
     ParserResult sendCommand(std::vector<std::string> &args) override;
 private:
     void setTemp(const std::string &temp);
-    unsigned short getTemp() const;
+    [[nodiscard]] unsigned short getTemp() const;
     void fanOn();
     void fanOff();
     void heat();
@@ -30,7 +30,7 @@ private:
     ParserResult updateDeviceState();
 
     OnOff fanState;
-    unsigned short temperature;
+    unsigned short temperature{};
     ThermostatMode modeState;
 };
 

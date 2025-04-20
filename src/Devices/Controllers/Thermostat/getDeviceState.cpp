@@ -30,7 +30,7 @@ ParserResult Thermostat::getDeviceState(){
 
     }catch(...){
         log->error("Thermostat device did not respond properly. Try again later.");
-        std::cout << "Error: Cannot talk to device." << std::endl;
+        std::cout << "Error: Cannot talk to thermostat." << std::endl;
         return ParserResult::error;
     }
     return ParserResult::ok;
