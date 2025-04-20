@@ -14,6 +14,6 @@ ParserResult Thermostat::updateDeviceState(){
     if (setRemoteState(json.stringify()))
         std::cout << "remote state updated" << std::endl;
     else
-        std::cout << "we shoudl add retry logic at least" << std::endl;
+        std::cout << "we should add retry logic at least" << std::endl;
     return ParserResult::ok;
 }
