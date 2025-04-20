@@ -26,6 +26,7 @@ protected:
 
   // get the remote device state and update internal state
   virtual const std::string getRemoteState();
+  virtual const bool setRemoteState(const std::string &body);
 
   // update the remote device state
   void setState(const std::string &body);
