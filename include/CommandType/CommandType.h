@@ -24,4 +24,7 @@ enum CommandType {
 
 CommandType identifyCommand(const std::string& cmd);
 
+const std::string to_string(CommandType t);
+
+
 #endif // COMMAND_TYPE_H

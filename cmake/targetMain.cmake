@@ -58,6 +58,7 @@ target_sources(smart_home_exec PRIVATE
         src/CommandParser/destructor.cpp
         src/CommandParser/constructor.cpp
         src/CommandType/identifyCommand.cpp
+        src/CommandType/to_string.cpp
         src/Help/showHelp.cpp
         src/Help/getSmartRemark.cpp
 )
