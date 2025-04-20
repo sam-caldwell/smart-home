@@ -7,5 +7,9 @@
 
 ParserResult Thermostat::updateDeviceState(){
     log->info("Thermostat::updateDeviceState() not implemented yet");
+    //
+    // ToDo: craft the json string with the update
+    //       send the state to the server.
+    //
     return ParserResult::ok;
 }

@@ -3,4 +3,5 @@
 
 const std::string  Device::getRemoteState() {
   log->info("Device::getRemoteState()");
+  return "{}";
 }
