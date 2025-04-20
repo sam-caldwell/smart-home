@@ -21,9 +21,9 @@ int main(int, char *argv[]) {
     } catch (const std::exception &e) {
         log.fatal(e.what(), generic_error);
         std::cout << "an unhandled error occurred.  Check the logs." << std::endl;
-        return 1;
+        return generic_error;
     } catch (...) {
         log.fatal("unknown error occurred ", unknown_error);
-        return 2;
+        return unknown_error;
     }
 }
