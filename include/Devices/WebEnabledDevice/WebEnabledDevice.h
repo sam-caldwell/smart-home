@@ -16,7 +16,7 @@ public:
 protected:
     void getHealth();
     const std::string getRemoteState() override;
-    void setRemoteState(const std::string &body);
+    const bool setRemoteState(const std::string &body);
 private:
     HttpClient *http;
 
