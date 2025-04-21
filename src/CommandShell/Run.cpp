@@ -14,7 +14,6 @@ int CommandShell::Run() {
     // ToDo: we could even steal from my old ANSI colors library if we wanted to...and have time...
     // See https://github.com/sam-caldwell/monorepo/tree/main/cpp/common/AnsiColors
     //
-    const char space = ' ';
     const std::string prompt = getCurrentTimestamp() + ">";
 
     // CommandParser doesn't need to be part of the class instance.
@@ -25,6 +24,7 @@ int CommandShell::Run() {
     displayWelcome();
 
     while (true) {
+        constexpr char space = ' ';
         // display the prompt
         std::cout << "\n" << space << prompt << space;
 
