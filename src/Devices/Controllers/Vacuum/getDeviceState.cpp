@@ -10,7 +10,7 @@ ParserResult Vacuum::getDeviceState(){
         const std::string json=getRemoteState();
         log->info("state: " + json);
 
-        SimpleJson parser(json);
+        // SimpleJson parser(json);
 
         //ToDo: parse json and store state
 

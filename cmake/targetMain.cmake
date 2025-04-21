@@ -5,17 +5,20 @@ target_include_directories(smart_home_exec PRIVATE ${PROJECT_ROOT}/include)
 target_sources(smart_home_exec PRIVATE
         src/utils/to_lower.cpp
         src/utils/to_upper.cpp
-        src/utils/getHostIp.cpp
-        src/utils/getPort.cpp
         src/utils/OnOff.cpp
         src/utils/getCurrentTimestamp.cpp
-        src/utils/trim.cpp
-        src/utils/getExecutableDir.cpp
-        src/utils/SimpleJson/constructor.cpp
-        src/utils/SimpleJson/getInt.cpp
-        src/utils/SimpleJson/getString.cpp
         src/utils/SimpleJson/parse.cpp
         src/utils/SimpleJson/stringify.cpp
+        src/utils/SimpleJson/constructor.cpp
+        src/utils/SimpleJson/getString.cpp
+        src/utils/SimpleJson/getInt.cpp
+        src/utils/to_upper.cpp
+        src/utils/trim.cpp
+        src/utils/getPort.cpp
+        src/utils/getExecutableDir.cpp
+        src/utils/getHostIp.cpp
+        src/utils/OnOff.cpp
+        src/utils/to_lower.cpp
         src/ParserResult/to_string.cpp
         src/Logger/error.cpp
         src/Logger/destructor.cpp
@@ -36,15 +39,18 @@ target_sources(smart_home_exec PRIVATE
         src/Devices/WebEnabledDevice/constructor.cpp
         src/Devices/WebEnabledDevice/setRemoteState.cpp
         src/Devices/WebEnabledDevice/getHealth.cpp
-        src/Devices/Controllers/Lights
-        src/Devices/Controllers/Lights/getDeviceState.cpp
+        src/Devices/Controllers/Lights/constructor.cpp
         src/Devices/Controllers/Lights/destructor.cpp
-        src/Devices/Controllers/Lights/sendCommand.cpp
+        src/Devices/Controllers/Lights/exists.cpp
         src/Devices/Controllers/Lights/turnOff.cpp
         src/Devices/Controllers/Lights/turnOn.cpp
+        src/Devices/Controllers/Lights/getDeviceState.cpp
+        src/Devices/Controllers/Lights/sendCommand.cpp
         src/Devices/Controllers/Lights/updateDeviceState.cpp
-        src/Devices/Controllers/Lights/contstructor.cpp
-        src/Devices/Controllers/Thermostat/ThermostatMode.cpp
+        src/Devices/Controllers/Television/getDeviceState.cpp
+        src/Devices/Controllers/Television/sendCommand.cpp
+        src/Devices/Controllers/Television/constructor.cpp
+        src/Devices/Controllers/Television/updateDeviceState.cpp
         src/Devices/Controllers/Thermostat/setTemp.cpp
         src/Devices/Controllers/Thermostat/getDeviceState.cpp
         src/Devices/Controllers/Thermostat/heat.cpp
@@ -54,12 +60,16 @@ target_sources(smart_home_exec PRIVATE
         src/Devices/Controllers/Thermostat/fanOn.cpp
         src/Devices/Controllers/Thermostat/cool.cpp
         src/Devices/Controllers/Thermostat/fanOff.cpp
+        src/Devices/Controllers/Thermostat/ThermostatMode.cpp
         src/Devices/Controllers/Thermostat/updateDeviceState.cpp
-        src/Devices/Controllers/Security
         src/Devices/Controllers/Security/getDeviceState.cpp
         src/Devices/Controllers/Security/sendCommand.cpp
         src/Devices/Controllers/Security/constructor.cpp
         src/Devices/Controllers/Security/updateDeviceState.cpp
+        src/Devices/Controllers/Vacuum/getDeviceState.cpp
+        src/Devices/Controllers/Vacuum/sendCommand.cpp
+        src/Devices/Controllers/Vacuum/constructor.cpp
+        src/Devices/Controllers/Vacuum/updateDeviceState.cpp
         src/Devices/Factory/create.cpp
         src/CommandShell/destructor.cpp
         src/CommandShell/Run.cpp

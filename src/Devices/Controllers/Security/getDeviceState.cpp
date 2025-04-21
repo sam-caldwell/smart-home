@@ -14,10 +14,7 @@ ParserResult Security::getDeviceState(){
 
         {
             log->info("parsing armed state (there's a spook joke in here somewhere)");
-            const std::string raw=parser.getString("armed");
-            log->info("armedState (raw): '" + raw+ "'");
-            this->armedState.set(raw);
-            log->info("armedState: '" + raw+ "' stored as " + this->armedState.string());
+            //ToDo: parse and store state
         }
 
     }catch(...){

@@ -4,7 +4,7 @@
 
 #include "Devices/Controllers/Lights/Lights.h"
 
-void Lights::turnOn(const std::string &name) {
+void Lights::turnOff(const std::string &name) {
     if(exists(name)) {
         lights->at(name).off();
         log->info("Turned off light: " + name);

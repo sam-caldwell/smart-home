@@ -19,9 +19,9 @@ public:
     ~Lights() override;
     ParserResult sendCommand(std::vector<std::string> &args) override;
 private:
+    bool exists(const std::string &room);
     void turnOn(const std::string &room);
     void turnOff(const std::string &room);
-    bool exists(const std::string &room);
 
     ParserResult getDeviceState();
     ParserResult updateDeviceState();

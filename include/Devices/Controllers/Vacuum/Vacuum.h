@@ -12,16 +12,21 @@
 #include "ParserResult/ParserResult.h"
 #include "Devices/WebEnabledDevice/WebEnabledDevice.h"
 
-class Vacuum: public WebEnabledDevice {
+class Vacuum : public WebEnabledDevice {
 public:
-    explicit Vacuum(Logger* log, const std::string& connstr);
-    ~Vacuum() override {};
+    explicit Vacuum(Logger *log, const std::string &connstr);
+
+    ~Vacuum() override {
+    };
+
     ParserResult sendCommand(std::vector<std::string> &args) override;
+
 private:
-    inline void start(const std::string &time){runState=true;};
-    inline void stop(const std::string &time){runState=false;};
+    inline void start(const std::string &time) { runState.on(); };
+    inline void stop(const std::string &time) { runState.off(); };
 
     ParserResult getDeviceState();
+
     ParserResult updateDeviceState();
 
     OnOff runState; //Arm|disarm state
