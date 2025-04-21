@@ -18,31 +18,22 @@ ParserResult Security::sendCommand(std::vector<std::string> &args) {
 
     const std::string subCommand = to_lower(args[1]); //set|get
 
+    //Update internal state from the device before we do anything. Bail on error
+    if (this->getDeviceState() != ParserResult::ok)
+        return ParserResult::ok; //Bail.  We've already said something to the user.  swallow the error
+
     if (subCommand == "get"){
-
-        //Update internal state from the device before we do anything. Bail on error
-        if (this->getDeviceState() == ParserResult::error)
-          return ParserResult::ok;
-
         std::cout << "armed: " << this->armedState.string() << std::endl;
-
-    }else if (subCommand == "set"){
-        if (argc < 3){
-            log->error("Security::sendCommand: wrong number of arguments for a 'security set' command");
-            return ParserResult::missingArgument;
-        }
-        const std::string subject = (argc>=3) ? to_lower(args[2]) : "";
-        if (subject == "arm")
-          armedState.on();
-        else if (subject == "disarm")
-          armedState.off();
+        return ParserResult::ok;
+    } else {
+        if (subCommand == "arm")
+            armedState.on();
+        else if (subCommand == "disarm")
+            armedState.off();
         else
           return ParserResult::invalidArgument;
-        // Now that internal state is updated, call the API to update the state.
+            // Now that internal state is updated, call the API to update the state.
         return updateDeviceState();
-    }else{
-      std::cout << "That makes no sense...try again." << std::endl;
-      return ParserResult::badCommand;
     }
     std::cout << "I'm pretty sure that's illegal in this county." << std::endl;
     return ParserResult::badCommand;

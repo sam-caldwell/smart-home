@@ -8,11 +8,11 @@
 CommandParser::CommandParser(Logger *log) : log(log) {
     const std::string baseUrl = "http://" + getHostIp();
     const std::unordered_map<CommandType, std::string> endpoints = {
-        // {CommandType::Lights, baseUrl+getPort("Lights")},
-        {CommandType::Security, baseUrl+getPort("Security")},
-        // {CommandType::Television, baseUrl+getPort("Television")},
+        // {CommandType::Lights, baseUrl+ ":" +etPort("Lights")},
+        {CommandType::Security, baseUrl + ":" + getPort("Security")},
+        // {CommandType::Television, baseUrl + ":" + getPort("Television")},
         {CommandType::Thermostat, baseUrl + ":" + getPort("Thermostat")},
-        // {CommandType::Vacuum, baseUrl+getPort("Vacuum")},
+        // {CommandType::Vacuum, baseUrl + ":" + getPort("Vacuum")},
     };
 
     for (const auto &[type, endpoint]: endpoints) {

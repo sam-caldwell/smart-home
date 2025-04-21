@@ -8,8 +8,11 @@
 ParserResult Security::updateDeviceState(){
     SimpleJson json;
     json.set("armed",armedState.string());
-    if (setRemoteState(json.stringify()))
-        std::cout << "remote armedState updated" << std::endl;
+    json.set("sensitivity",2); //placeholder
+    const std::string jsonString = json.stringify();
+    log->info("sending update: "+jsonString);
+    if (setRemoteState(jsonString))
+        std::cout << "remote device updated ("+armedState.string()+")" << std::endl;
     else
         std::cout << "we should add retry logic at least" << std::endl;
     return ParserResult::ok;

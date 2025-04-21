@@ -28,17 +28,10 @@ def update_state():
         return jsonify({"error": "Invalid or missing JSON body"}), 400
 
     if "armed" in data:
-        if isinstance(data["armed"], bool):
+        if isinstance(data["armed"], str) or data["armed"] not in ["on", "off"]:
             security_state["armed"] = data["armed"]
         else:
-            return jsonify({"error": "'armed' must be a boolean"}), 400
-
-    if "sensitivity" in data:
-        if isinstance(data["sensitivity"], int) and 1 <= data["sensitivity"] <= 5:
-            security_state["sensitivity"] = data["sensitivity"]
-        else:
-            return jsonify({"error": "Sensitivity must be an integer between 1 and 5"}), 400
-
+            return jsonify({"error": "'armed' must be a string"}), 400
     return jsonify(security_state), 200
 
 if __name__ == "__main__":
