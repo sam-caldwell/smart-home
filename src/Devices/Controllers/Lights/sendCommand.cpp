@@ -6,7 +6,6 @@
 
 // receive command-line input for processing.
 ParserResult Lights::sendCommand(std::vector<std::string> &args) {
-
     log->info("Lights::sendCommand start");
 
     int argc = args.size();
@@ -16,16 +15,29 @@ ParserResult Lights::sendCommand(std::vector<std::string> &args) {
     if (this->getDeviceState() != ParserResult::ok)
         return ParserResult::ok; //Bail.  We've already said something to the user.  swallow the error
 
-    if (subCommand == "get"){
-        //ToDo: iterate over the map and display all lights and their state
+    if (subCommand == "get") {
+        for (const auto &[name, state] : *lights) {
+            std::cout << name << " : " << state.string() << std::endl;
+        }
         return ParserResult::ok;
-    } else if (subCommand == "set"){
-        //ToDo: look up the light by name in the map.  If it is in the map, set the value accordingly (on|off)
-        //      if the light name is not in the map, return an error state.
-        // Now that internal state is updated, call the API to update the state.
+    } else if (subCommand == "set") {
+        if (argc == 3) {
+            const std::string name = to_lower(args[2]);
+            const std::string value = to_lower(args[3]);
+            if (!exists(name)) {
+                return ParserResult::invalidArgument;
+            }
+            if (value == "on")
+                lights->at(value).on();
+            else if (value == "off")
+                lights->at(value).off();
+            else
+                return ParserResult::invalidArgument;
+        } else {
+            return ParserResult::invalidArgument;
+        }
         return updateDeviceState();
     }
     std::cout << "I'm pretty sure that's illegal in this county." << std::endl;
     return ParserResult::badCommand;
 }
-
