@@ -43,19 +43,18 @@ int CommandShell::Run() {
                 return success; //Terminate
                 break;
 
+            case ParserResult::ok:
+                break;
+
             case ParserResult::badCommand:
                 log->error("Bad or Unrecognized command.");
-                std::cout << "Use ? or help for usage." << std::endl;
-                break; //keep going
+            std::cout << "Use ? or help for usage." << std::endl;
+            break; //keep going
 
             case ParserResult::missingArgument:
                 log->error("Missing argument.");
-                std::cout << "Use ? or help for usage." << std::endl;
-                break; //keep going
-
-            case ParserResult::ok:
-                //              log->info("Successfully executed '" + input+"'");
-                break;
+            std::cout << "Use ? or help for usage." << std::endl;
+            break; //keep going
 
             case ParserResult::emptyCommand:
                 log->error("No input provided.");
