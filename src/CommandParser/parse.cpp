@@ -5,7 +5,7 @@
 #include "CommandParser/CommandParser.h"
 
 // Parse command-line inputs and execute the result
-ParserResult CommandParser::parse(const std::string& inputRaw) {
+ParserResult CommandParser::parse(const std::string &inputRaw) {
     //strip the commandline string and make it case insensitive
     std::string input = to_lower(trim(inputRaw));
 
@@ -19,7 +19,7 @@ ParserResult CommandParser::parse(const std::string& inputRaw) {
 
     // identify the tokens
     CommandType type = identifyCommand(tokens[0]);
-    switch(type) {
+    switch (type) {
         case CommandType::Exit:
             return ParserResult::exitCommand;
 
@@ -32,20 +32,19 @@ ParserResult CommandParser::parse(const std::string& inputRaw) {
 
         case CommandType::Help:
             showHelp();
-        log->info("Help requested.");
-        return ParserResult::ok;
+            log->info("Help requested.");
+            return ParserResult::ok;
 
         case CommandType::TicTacToe:
             std::cout << "Wouldn't you prefer a nice game of chess?" << std::endl;
-        log->info("TicTacToe requested.");
-        return ParserResult::ok;
+            log->info("TicTacToe requested.");
+            return ParserResult::ok;
 
         case CommandType::Unknown:
             //fall through
-                default:
-                    log->error("Unknown command: " + tokens[0]);
-        return ParserResult::badCommand;
+        default:
+            log->error("Unknown command: " + tokens[0]);
+            return ParserResult::badCommand;
     }
     //ToDo: add more parser logic.
-
 }
