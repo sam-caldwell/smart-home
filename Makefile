@@ -39,7 +39,6 @@ run:
         export PORT_TELEVISION=8003; \
         export PORT_THERMOSTAT=8004; \
         export PORT_VACCUM=8005; \
-        clear; \
 		./build/smart_home_exec \
 	)
 

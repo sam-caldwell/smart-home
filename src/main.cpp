@@ -12,11 +12,13 @@
 #include "CommandShell/CommandShell.h"
 
 int main(int, char *argv[]) {
+    std::cout << "Starting..." << std::endl;
     Logger log(getExecutableDir(argv[0]) + "/smart-home.log");
     log.info("File logger initialized.");
     try {
-        log.info("Starting...");
+        log.info("Starting shell");
         CommandShell cli(&log);
+        log.info("Command shell initialized. Launching...");
         return cli.Run(); // return an exit code
     } catch (const std::runtime_error &e) {
         std::cout << e.what() << std::endl;
