@@ -15,9 +15,7 @@
 class Television : public WebEnabledDevice {
 public:
     explicit Television(Logger *log, const std::string &connstr);
-
-    ~Television() override {
-    };
+    ~Television() override {};
 
     ParserResult sendCommand(std::vector<std::string> &args) override;
 
