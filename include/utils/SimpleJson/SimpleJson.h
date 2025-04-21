@@ -18,16 +18,21 @@
 #include <stdexcept>
 #include <string>
 #include <unordered_map>
+#include "utils/OnOff.h"
 
 class SimpleJson {
 public:
+
+    using DataMap = std::unordered_map<std::string, std::string>;
+
     explicit SimpleJson() = default;
-
     explicit SimpleJson(const std::string &json);
+    explicit SimpleJson(const std::unordered_map<std::string, OnOff> &map);
 
-    inline void set(std::string key, std::string value) { data[key] = value; };
-    inline void set(std::string key, int value) { data[key] = std::to_string(value); };
-    inline void set(std::string key, bool value) { data[key] = std::to_string(value); };
+    inline void set(const std::string& key, const std::string &value) { data[key] = value; };
+    inline void set(const std::string& key, const int &value) { data[key] = std::to_string(value); };
+    inline void set(const std::string& key, const bool &value) { data[key] = std::to_string(value); };
+    inline void set(const std::string& key, const OnOff &value) { data[key] = value.string(); };
 
     // return the string representation of the internal key-value state (map)
     const std::string stringify();
@@ -38,9 +43,12 @@ public:
     // parse json string for the value of a given key as int
     [[nodiscard]] int getInt(const std::string &key) const;
 
+    // return the parsed map state
+    [[nodiscard]] DataMap getMap() const {return data;}
+
 private:
     // the parsed json string state as a key-value map
-    std::unordered_map<std::string, std::string> data;
+    DataMap data;
 
     void parse(const std::string &json);
 };

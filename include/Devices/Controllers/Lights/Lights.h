@@ -1,6 +1,6 @@
-// Security.h
+// Devices/Controller/Lights.h
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
-// Description: Security Http API device class
+// Description: Lights Http API device class
 
 #ifndef LIGHTS_DEVICE_H
 #define LIGHTS_DEVICE_H
@@ -19,8 +19,9 @@ public:
     ~Lights() override;
     ParserResult sendCommand(std::vector<std::string> &args) override;
 private:
-    inline void turnOn(const std::string &room);
-    inline void turnOff(const std::string &room);
+    void turnOn(const std::string &room);
+    void turnOff(const std::string &room);
+    bool exists(const std::string &room);
 
     ParserResult getDeviceState();
     ParserResult updateDeviceState();
