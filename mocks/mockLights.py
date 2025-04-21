@@ -9,11 +9,11 @@ app = Flask(__name__)
 
 # Initial light states by room
 lights_state = {
-    "kitchen": "off",
-    "office": "off",
-    "bedroom": "off",
-    "livingroom": "off",
-    "bathroom": "off"
+    "kitchen": "on",
+    "office": "on",
+    "bedroom": "on",
+    "livingroom": "on",
+    "bathroom": "on"
 }
 
 @app.route("/api/v1/health", methods=["GET"])
