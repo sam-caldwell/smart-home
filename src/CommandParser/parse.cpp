@@ -23,6 +23,7 @@ ParserResult CommandParser::parse(const std::string& inputRaw) {
         case CommandType::Exit:
             return ParserResult::exitCommand;
 
+        case CommandType::Security:
         case CommandType::Thermostat:
         return invoke_device(devices, type, tokens);
 
@@ -39,11 +40,6 @@ ParserResult CommandParser::parse(const std::string& inputRaw) {
         case CommandType::Television:
             //ToDo: execute Television
                 log->info("Television");
-        return ParserResult::ok;
-
-        case CommandType::Security:
-            //ToDo: execute Security
-                log->info("Security");
         return ParserResult::ok;
 
         case CommandType::Help:

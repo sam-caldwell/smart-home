@@ -18,8 +18,8 @@ public:
     ~Security() override {};
     ParserResult sendCommand(std::vector<std::string> &args) override;
 private:
-    inline void arm(){state.on();}
-    inline void disarm(){state.off();}
+    inline void arm(){armedState.on();}
+    inline void disarm(){armedState.off();}
 
     ParserResult getDeviceState();
     ParserResult updateDeviceState();

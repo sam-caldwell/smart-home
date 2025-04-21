@@ -6,17 +6,11 @@
 #include "CommandParser/CommandParser.h"
 
 ParserResult CommandParser::invoke_device(DeviceMap devices, CommandType cmd, CommandArgs &args) {
-
     if (devices.count(cmd)) {
-
         return devices.at(cmd)->sendCommand(args);
-
     } else {
-
-        throw std::runtime_error("device controller not found");
-
+        throw std::runtime_error("device controller (" + to_string(cmd) + ") not found");
     }
 
     return ParserResult::badCommand;
-
 }

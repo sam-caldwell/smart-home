@@ -47,6 +47,11 @@ target_sources(smart_home_exec PRIVATE
         src/Devices/Controllers/Thermostat/cool.cpp
         src/Devices/Controllers/Thermostat/fanOff.cpp
         src/Devices/Controllers/Thermostat/updateDeviceState.cpp
+        src/Devices/Controllers/Security
+        src/Devices/Controllers/Security/getDeviceState.cpp
+        src/Devices/Controllers/Security/sendCommand.cpp
+        src/Devices/Controllers/Security/constructor.cpp
+        src/Devices/Controllers/Security/updateDeviceState.cpp
         src/Devices/Factory/create.cpp
         src/CommandShell/destructor.cpp
         src/CommandShell/Run.cpp

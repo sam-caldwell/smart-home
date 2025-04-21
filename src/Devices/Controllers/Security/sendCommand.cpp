@@ -20,8 +20,10 @@ ParserResult Security::sendCommand(std::vector<std::string> &args) {
 
     if (subCommand == "get"){
 
-        //Update internal state from the device before we do anything.
-        getDeviceState();
+        //Update internal state from the device before we do anything. Bail on error
+        if (this->getDeviceState() == ParserResult::error)
+          return ParserResult::ok;
+
         std::cout << "armed: " << this->armedState.string() << std::endl;
 
     }else if (subCommand == "set"){

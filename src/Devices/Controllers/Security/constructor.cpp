@@ -6,7 +6,7 @@
 
 Security::Security(Logger *log, const std::string &connstr)
     : WebEnabledDevice(log, connstr),
-      state() {
+      armedState() {
     log->info("Security system is registered (" + connstr + ")");
     getDeviceState();
 };
