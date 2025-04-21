@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 # Initial state of the security system
 security_state = {
-    "armed": False,
+    "armed": "on",
 }
 
 @app.route("/api/v1/health", methods=["GET"])
