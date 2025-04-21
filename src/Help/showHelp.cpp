@@ -8,22 +8,20 @@ void showHelp(){
     std::cout << "Commands:\n"
               << " exit|quit                       - terminate program\n"
               << " help|?                          - show this screen\n"
+              << " lights <name> <on|off>           - turn on/off a specific light\n"
+              << " lights get                       - show current light state\n"
+              << " television <on|off>             - turn on/off the television\n"
+              << " television set channel <int>    - set the television channel\n"
+              << " television set volume <int>     - set the television volume\n"
               << " thermostat set fan <on|off>     - turn on/off fan\n"
               << " thermostat set mode <heat|cool> - set mode\n"
               << " thermostat set temp <number>    - set temperature\n"
               << " thermostat get                  - get current thermostat state\n"
-              << " lights <name> <on|off>           - turn on/off a specific light\n"
-              << " lights get                       - show current light state\n"
-              << " security <arm|disarm>           - arm or disarm security\n"
               << " security get                    - show current security state\n"
+              << " security <arm|disarm>           - arm or disarm security\n"
               << " vacuum schedule <time>          - schedule a time for vacuum to run\n"
               << " vacuum cancel                   - cancel a current vacuum run\n"
-              << " television <on|off>             - turn on/off the television\n"
-              << " television set channel <int>    - set the television channel\n"
-              << " television set volume <int>     - set the television volume\n"
               << "\n"
               << getSmartRemark() << "\n"
               << std::endl;
-
-    // Todo: add more help content here
 };
