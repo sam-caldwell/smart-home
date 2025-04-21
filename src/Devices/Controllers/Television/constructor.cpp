@@ -6,7 +6,6 @@
 
 Television::Television(Logger *log, const std::string &connstr)
     : WebEnabledDevice(log, connstr),
-      powerState(),
       volumeState(0),
       channelState(1) {
 

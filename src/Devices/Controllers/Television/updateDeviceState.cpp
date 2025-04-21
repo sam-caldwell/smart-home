@@ -1,6 +1,6 @@
 // Television/updateDeviceState.cpp
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
-// Description: Security Http API device class
+// Description: Television Http API device class
 
 #include "Devices/Controllers/Television/Television.h"
 #include <stdexcept>
