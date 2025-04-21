@@ -36,6 +36,14 @@ target_sources(smart_home_exec PRIVATE
         src/Devices/WebEnabledDevice/constructor.cpp
         src/Devices/WebEnabledDevice/setRemoteState.cpp
         src/Devices/WebEnabledDevice/getHealth.cpp
+        src/Devices/Controllers/Lights
+        src/Devices/Controllers/Lights/getDeviceState.cpp
+        src/Devices/Controllers/Lights/destructor.cpp
+        src/Devices/Controllers/Lights/sendCommand.cpp
+        src/Devices/Controllers/Lights/turnOff.cpp
+        src/Devices/Controllers/Lights/turnOn.cpp
+        src/Devices/Controllers/Lights/updateDeviceState.cpp
+        src/Devices/Controllers/Lights/contstructor.cpp
         src/Devices/Controllers/Thermostat/ThermostatMode.cpp
         src/Devices/Controllers/Thermostat/setTemp.cpp
         src/Devices/Controllers/Thermostat/getDeviceState.cpp
