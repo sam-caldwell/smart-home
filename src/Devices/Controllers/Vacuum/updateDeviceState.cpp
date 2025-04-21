@@ -1,11 +1,11 @@
-// Lights/updateDeviceState.cpp
+// Vacuum/updateDeviceState.cpp
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Security Http API device class
 
-#include "Devices/Controllers/Lights/Lights.h"
+#include "Devices/Controllers/Vacuum/Vacuum.h"
 #include <stdexcept>
 
-ParserResult Lights::updateDeviceState(){
+ParserResult Vacuum::updateDeviceState(){
     SimpleJson json;
     // we have an internal state (map) representing the current state.
     const std::string jsonString = json.stringify();

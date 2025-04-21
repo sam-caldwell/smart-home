@@ -29,7 +29,7 @@ ParserResult Security::sendCommand(std::vector<std::string> &args) {
         if (subCommand == "arm")
             armedState.on();
         else if (subCommand == "disarm")
-            armedState.off();
+            armedState.off()
         else
           return ParserResult::invalidArgument;
             // Now that internal state is updated, call the API to update the state.
@@ -38,4 +38,3 @@ ParserResult Security::sendCommand(std::vector<std::string> &args) {
     std::cout << "I'm pretty sure that's illegal in this county." << std::endl;
     return ParserResult::badCommand;
 }
-
