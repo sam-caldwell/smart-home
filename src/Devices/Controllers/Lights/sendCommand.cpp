@@ -16,28 +16,34 @@ ParserResult Lights::sendCommand(std::vector<std::string> &args) {
         return ParserResult::ok; //Bail.  We've already said something to the user.  swallow the error
 
     if (subCommand == "get") {
-        for (const auto &[name, state] : *lights) {
+        for (const auto &[name, state]: *lights) {
             std::cout << name << " : " << state.string() << std::endl;
         }
-        return ParserResult::ok;
-    } else if (subCommand == "set") {
-        if (argc == 3) {
-            const std::string name = to_lower(args[2]);
-            const std::string value = to_lower(args[3]);
-            if (!exists(name)) {
-                return ParserResult::invalidArgument;
-            }
-            if (value == "on")
-                lights->at(value).on();
-            else if (value == "off")
-                lights->at(value).off();
-            else
-                return ParserResult::invalidArgument;
-        } else {
+    } else {
+        if (argc < 3)
             return ParserResult::invalidArgument;
+
+        const std::string name = to_lower(args[1]);
+        if (exists(name)) {
+            log->info("light found: " + name);
+        } else {
+            log->error("light not found: " + name);
+            std::cout << "light not found: " << name << std::endl;
+            return ParserResult::badCommand;
         }
-        return updateDeviceState();
+
+        const std::string value = to_lower(args[2]);
+        if (value == "on")
+            lights->at(name).on();
+        else if (value == "off")
+            lights->at(name).off();
+        else {
+            log->error("invalid light setting: '" + name + "'");
+            std::cout << "lights can only be turned 'on' or 'off': " << name << std::endl;
+            return ParserResult::badCommand;
+        }
+        log->info("light " + name + ": "+value);
+        updateDeviceState();
     }
-    std::cout << "I'm pretty sure that's illegal in this county." << std::endl;
-    return ParserResult::badCommand;
+    return ParserResult::ok;
 }

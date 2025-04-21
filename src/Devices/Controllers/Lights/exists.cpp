@@ -6,5 +6,9 @@
 
 // return true if the named light exists.
 bool Lights::exists(const std::string &name) {
-    return lights->find(name) != lights->end();
+    try {
+        return lights->find(name) != lights->end();
+    } catch (const std::out_of_range &e) {
+        return false;
+    }
 }

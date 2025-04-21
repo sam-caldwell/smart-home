@@ -41,9 +41,10 @@ ParserResult CommandParser::parse(const std::string &inputRaw) {
             return ParserResult::ok;
 
         case CommandType::Unknown:
-            //fall through
-        default:
             log->error("Unknown command: " + tokens[0]);
+            return ParserResult::badCommand;
+        default:
+            log->error("Bad or unrecognized command: " + tokens[0]);
             return ParserResult::badCommand;
     }
     //ToDo: add more parser logic.

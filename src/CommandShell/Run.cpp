@@ -47,10 +47,7 @@ int CommandShell::Run() {
                 break;
 
             case ParserResult::badCommand:
-                log->error("Bad or Unrecognized command.");
-            std::cout << "Use ? or help for usage." << std::endl;
-            break; //keep going
-
+            case ParserResult::invalidArgument:
             case ParserResult::missingArgument:
                 log->error("Missing argument.");
             std::cout << "Use ? or help for usage." << std::endl;
