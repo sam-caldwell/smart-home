@@ -7,5 +7,5 @@
 #include "CommandShell/CommandShell.h"
 
 CommandShell::CommandShell(Logger *log) : log(log){
-  /* do nothing */
+  log->info("CommandShell::CommandShell() completed");
 }
