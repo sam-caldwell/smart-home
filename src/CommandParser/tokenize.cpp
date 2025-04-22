@@ -4,12 +4,11 @@
 
 #include "CommandParser/CommandParser.h"
 
-Tokens CommandParser::tokenize(const RawCommandLine& input) {
-
+Tokens CommandParser::tokenize(const RawCommandLine &input) {
     Tokens tokens;
 
-    // create a stream from our commandline input and make sure it's all lower-case (case insensitive)
-    std::istringstream stream(to_lower(input));
+    // create a stream from our commandline input
+    std::istringstream stream(input);
 
     Token current_token;
 
@@ -19,5 +18,4 @@ Tokens CommandParser::tokenize(const RawCommandLine& input) {
     }
 
     return tokens;
-
 }
