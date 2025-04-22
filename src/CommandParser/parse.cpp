@@ -20,15 +20,17 @@ ParserResult CommandParser::parse(const std::string &inputRaw) {
 
     // get the first token.  This is our command
     switch (const CommandType command = identifyCommand(tokens.pop())) {
-        case CommandType::Exit:
-            return ParserResult::exitCommand;
 
         case CommandType::Lights: //fall through
         case CommandType::Security: //fall through
         case CommandType::Television: //fall through
         case CommandType::Thermostat: //fall through
+        // ToDo: add more devices here
         case CommandType::Vacuum:
             return invoke_device(devices, command, tokens);
+
+        case CommandType::Exit:
+            return ParserResult::exitCommand;
 
         case CommandType::Help:
             showHelp();
