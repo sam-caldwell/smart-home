@@ -4,7 +4,7 @@
 
 #include "Devices/Controllers/Lights/Lights.h"
 
-Lights::Lights(Logger *log, const std::string &connstr): WebEnabledDevice(log, connstr), lights(new LightMap) {
+Lights::Lights(Logger *log, const ConnectionString &connstr): WebEnabledDevice(log, connstr), lights(new LightMap) {
     log->info("Lights system is registered (" + connstr + ")");
     getDeviceState();
 };

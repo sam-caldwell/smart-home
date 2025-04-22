@@ -4,7 +4,7 @@
 
 #include "Devices/Controllers/Vacuum/Vacuum.h"
 
-Vacuum::Vacuum(Logger *log, const std::string &connstr)
+Vacuum::Vacuum(Logger *log, const ConnectionString &connstr)
     : WebEnabledDevice(log, connstr),
       runState() {
 

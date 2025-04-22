@@ -4,7 +4,7 @@
 
 #include "Devices/Controllers/Television/Television.h"
 
-Television::Television(Logger *log, const std::string &connstr)
+Television::Television(Logger *log, const ConnectionString &connstr)
     : WebEnabledDevice(log, connstr),
       volumeState(0),
       channelState(1) {

@@ -4,6 +4,8 @@
 
 #ifndef THERMOSTAT_H
 #define THERMOSTAT_H
+#include "utils/ConnectionString.h"
+#include "utils/Tokens.h"
 #include <sstream>
 #include "utils/OnOff.h"
 #include "utils/StringUtils.h"
@@ -15,9 +17,9 @@
 
 class Thermostat: public WebEnabledDevice {
 public:
-    explicit Thermostat(Logger* log, const std::string& connstr);
+    explicit Thermostat(Logger* log, const ConnectionString& connstr);
     ~Thermostat() override {};
-    ParserResult sendCommand(std::vector<std::string> &args) override;
+    ParserResult sendCommand(Tokens &args) override;
 private:
     void setTemp(const std::string &temp);
     [[nodiscard]] unsigned short getTemp() const;

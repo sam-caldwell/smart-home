@@ -4,7 +4,7 @@
 
 #include "Devices/Controllers/Security/Security.h"
 
-Security::Security(Logger *log, const std::string &connstr)
+Security::Security(Logger *log, const ConnectionString &connstr)
     : WebEnabledDevice(log, connstr),
       armedState() {
     log->info("Security system is registered (" + connstr + ")");

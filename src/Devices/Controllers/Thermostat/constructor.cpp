@@ -4,7 +4,7 @@
 
 #include "Devices/Controllers/Thermostat/Thermostat.h"
 
-Thermostat::Thermostat(Logger *log, const std::string &connstr)
+Thermostat::Thermostat(Logger *log, const ConnectionString &connstr)
     : WebEnabledDevice(log, connstr),
       temperature(72),
       modeState(ThermostatMode::cool) {

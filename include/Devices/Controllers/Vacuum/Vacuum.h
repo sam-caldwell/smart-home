@@ -4,6 +4,8 @@
 
 #ifndef VACUUM_H
 #define VACUUM_H
+#include "utils/ConnectionString.h"
+#include "utils/Tokens.h"
 #include <sstream>
 #include "utils/OnOff.h"
 #include "utils/StringUtils.h"
@@ -14,17 +16,17 @@
 
 class Vacuum : public WebEnabledDevice {
 public:
-    explicit Vacuum(Logger *log, const std::string &connstr);
+    explicit Vacuum(Logger *log, const ConnectionString &connstr);
 
     ~Vacuum() override {
         /*noop*/
     };
 
-    ParserResult sendCommand(std::vector<std::string> &args) override;
+    ParserResult sendCommand(Tokens &args) override;
 
 private:
-    inline void start(const std::string &time) { runState.on(); };
-    inline void stop(const std::string &time) { runState.off(); };
+    inline void start() { runState.on(); };
+    inline void stop() { runState.off(); };
 
     ParserResult getDeviceState();
 

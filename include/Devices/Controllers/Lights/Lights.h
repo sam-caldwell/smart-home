@@ -4,6 +4,8 @@
 
 #ifndef LIGHTS_DEVICE_H
 #define LIGHTS_DEVICE_H
+#include "utils/ConnectionString.h"
+#include "utils/Tokens.h"
 #include <sstream>
 #include <unordered_map>
 #include "utils/OnOff.h"
@@ -15,9 +17,9 @@
 
 class Lights: public WebEnabledDevice {
 public:
-    explicit Lights(Logger* log, const std::string& connstr);
+    explicit Lights(Logger* log, const ConnectionString &connstr);
     ~Lights() override;
-    ParserResult sendCommand(std::vector<std::string> &args) override;
+    ParserResult sendCommand(Tokens &args) override;
 private:
     bool exists(const std::string &room);
     void turnOn(const std::string &room);
