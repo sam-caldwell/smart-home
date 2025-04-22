@@ -8,7 +8,8 @@ Tokens CommandParser::tokenize(const RawCommandLine& input) {
 
     Tokens tokens;
 
-    std::istringstream stream(input);
+    // create a stream from our commandline input and make sure it's all lower-case (case insensitive)
+    std::istringstream stream(to_lower(input));
 
     Token current_token;
 
