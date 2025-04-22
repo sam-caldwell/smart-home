@@ -18,7 +18,7 @@ class Security: public WebEnabledDevice {
 public:
     explicit Security(Logger* log, const ConnectionString& connstr);
     ~Security() override {};
-    ParserResult sendCommand(Tokens &args) override;
+    ParserResult sendCommand(Tokens &tokens) override;
 private:
     inline void arm(){armedState.on();}
     inline void disarm(){armedState.off();}
