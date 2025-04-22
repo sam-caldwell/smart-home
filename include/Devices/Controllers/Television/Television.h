@@ -21,17 +21,17 @@ public:
 
 private:
     inline void on() { powerState.on(); }
-    inline void disarm() { powerState.off(); }
-    inline void volume(const unsigned short v) { volumeState = v; };
-    inline void channel(const unsigned short v) { channelState = v; };
+    inline void off() { powerState.off(); }
+    void volume(const std::string &v);
+    void channel(const std::string &v);
 
     ParserResult getDeviceState();
 
     ParserResult updateDeviceState();
 
     OnOff powerState;
-    unsigned short volumeState;
     unsigned short channelState;
+    unsigned short volumeState;
 };
 
 #endif //TELEVISION_DEVICE_H

@@ -48,6 +48,8 @@ target_sources(smart_home_exec PRIVATE
         src/Devices/Controllers/Lights/sendCommand.cpp
         src/Devices/Controllers/Lights/updateDeviceState.cpp
         src/Devices/Controllers/Television/getDeviceState.cpp
+        src/Devices/Controllers/Television/volume.cpp
+        src/Devices/Controllers/Television/channel.cpp
         src/Devices/Controllers/Television/sendCommand.cpp
         src/Devices/Controllers/Television/constructor.cpp
         src/Devices/Controllers/Television/updateDeviceState.cpp

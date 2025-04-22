@@ -4,12 +4,19 @@
 
 #include "Devices/Controllers/Television/Television.h"
 
-inline void Television::channel(const unsigned short v) {
-  if(v < 99){
-    channelState = v;
+void Television::channel(const std::string &v) {
+try{
+    unsigned short n= atoi(v.c_str());
+
+  if(n < 99){
+    channelState = n;
   }else{
       log->error("Channel out of range.");
-      std::cout << "Out of range. "
-                << "Even Bruce Springsteen sang that there were 99 channels and nothing on." << std::endl;
-  }
+      std::cout << "Channel out of range. ";
+      return;
+    }
+    }catch(...){
+      log->error("Channel must be number 1-99");
+      std::cout << "Channel must be number 1-99";
+    }
 };
