@@ -5,7 +5,7 @@
 #include "Devices/Controllers/Security/Security.h"
 
 // receive command-line input for processing.
-ParserResult Security::sendCommand(std::vector<std::string> &args) {
+ParserResult Security::sendCommand(Tokens &args) {
 
     log->info("Security::sendCommand start");
 

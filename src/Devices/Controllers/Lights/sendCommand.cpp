@@ -5,7 +5,7 @@
 #include "Devices/Controllers/Lights/Lights.h"
 
 // receive command-line input for processing.
-ParserResult Lights::sendCommand(std::vector<std::string> &args) {
+ParserResult Lights::sendCommand(Tokens &args) {
     log->info("Lights::sendCommand start");
 
     int argc = args.size();

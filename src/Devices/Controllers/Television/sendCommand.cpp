@@ -5,7 +5,7 @@
 #include "Devices/Controllers/Television/Television.h"
 
 // receive command-line input for processing.
-ParserResult Television::sendCommand(std::vector<std::string> &args) {
+ParserResult Television::sendCommand(Tokens &args) {
     log->info("Lights::sendCommand start");
 
     int argc = args.size();

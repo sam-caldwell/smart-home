@@ -5,6 +5,7 @@
 #ifndef DEVICE_H
 #define DEVICE_H
 
+#include "utils/Tokens.h"
 #include "Logger/Logger.h"
 #include "ParserResult/ParserResult.h"
 #include "CommandType/CommandType.h"
@@ -16,7 +17,7 @@ public:
     virtual ~Device() = default;
 
     //process device-specific commands
-    virtual ParserResult sendCommand(std::vector<std::string> &args);
+    virtual ParserResult sendCommand(Tokens &args);
 
 protected:
     // check device health

@@ -5,7 +5,7 @@
 #include "Devices/Controllers/Vacuum/Vacuum.h"
 
 // receive command-line input for processing.
-ParserResult Vacuum::sendCommand(std::vector<std::string> &args) {
+ParserResult Vacuum::sendCommand(Tokens &args) {
 
     log->info("Lights::sendCommand start");
 

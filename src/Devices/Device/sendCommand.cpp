@@ -1,7 +1,7 @@
 
 #include "Devices/Device/Device.h"
 
-ParserResult Device::sendCommand(std::vector<std::string> &args) {
+ParserResult Device::sendCommand(Tokens &args) {
   log->info("Device::sendCommand() executed");
   return ParserResult::ok;
 }

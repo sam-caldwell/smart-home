@@ -5,7 +5,7 @@
 #include "Devices/Controllers/Thermostat/Thermostat.h"
 
 // receive command-line input for processing.
-ParserResult Thermostat::sendCommand(std::vector<std::string> &args) {
+ParserResult Thermostat::sendCommand(Tokens &args) {
     log->info("Thermostat::sendCommand start");
 
     int argc = args.size();
