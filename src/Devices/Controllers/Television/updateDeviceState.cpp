@@ -7,7 +7,9 @@
 
 ParserResult Television::updateDeviceState(){
     SimpleJson json;
-    // we have an internal state (map) representing the current state.
+    json.set("power",powerState.string());
+    json.set("channel",std::to_string(channelState));
+    json.set("volume",std::to_string(volumeState));
     const std::string jsonString = json.stringify();
     log->info("sending update: "+jsonString);
     if (setRemoteState(jsonString))
