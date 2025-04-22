@@ -19,8 +19,9 @@ void showHelp(){
               << " thermostat get                  - get current thermostat state\n"
               << " security get                    - show current security state\n"
               << " security <arm|disarm>           - arm or disarm security\n"
-              << " vacuum schedule <time>          - schedule a time for vacuum to run\n"
-              << " vacuum cancel                   - cancel a current vacuum run\n"
+              << " vacuum get                      - get vacuum state\n"
+              << " vacuum on                       - start vacuum run\n"
+              << " vacuum of                       - stop vacuum run\n"
               << "\n"
               << getSmartRemark() << "\n"
               << std::endl;
