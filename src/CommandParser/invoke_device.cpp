@@ -3,13 +3,14 @@
 // Description: Parses CLI input strings into actionable command tokens
 // Dependencies: <string>, <vector>, <unordered_map>, Logger
 
+#include "utils/Tokens.h"
 #include "CommandParser/CommandParser.h"
 
-ParserResult CommandParser::invoke_device(DeviceMap devices, CommandType cmd, Tokens &args) {
-    if (devices.count(cmd)) {
-        return devices.at(cmd)->sendCommand(args);
+ParserResult CommandParser::invoke_device(DeviceMap devices, CommandType command, Tokens &args) {
+    if (devices.contains(command)) {
+        return devices.at(command)->sendCommand(args);
     } else {
-        throw std::runtime_error("device controller (" + to_string(cmd) + ") not found");
+        throw std::runtime_error("device controller (" + to_string(command) + ") not found");
     }
 
     return ParserResult::badCommand;
