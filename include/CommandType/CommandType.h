@@ -6,9 +6,8 @@
 #define COMMAND_TYPE_H
 
 #include <iostream>
-#include <unordered_map>
-#include <vector>
-#include <sstream>
+#include <map>
+#include "utils/Token.h"
 
 enum CommandType {
     Exit,
@@ -22,7 +21,9 @@ enum CommandType {
     Unknown
 };
 
-CommandType identifyCommand(const std::string& cmd);
+using CommandMap = std::map<Token, CommandType>;
+
+CommandType identifyCommand(const Token& token);
 
 const std::string to_string(CommandType t);
 
