@@ -19,6 +19,8 @@
 #include "utils/StringUtils.h"
 #include "utils/getHostIp.h"
 #include "utils/getPort.h"
+#include "utils/Tokens.h"
+#include "utils/RawCommandLine.h"
 #include <Help/Help.h>
 #include "CommandType/CommandType.h"
 #include "ParserResult/ParserResult.h"
@@ -26,11 +28,6 @@
 #include "Devices/Device/Device.h"
 #include "Devices/WebEnabledDevice/WebEnabledDevice.h"
 #include "Devices/Factory/DeviceFactory.h"
-
-// This is the raw commandline text. We are abstracted from string for future proofing.
-using RawCommandLine = std::string;
-
-
 
 
 class CommandParser {
