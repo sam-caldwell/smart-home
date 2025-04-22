@@ -2,13 +2,12 @@
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Implementation of the CommandParser logic
 
-#include "utils/Tokens.h"
 #include "CommandParser/CommandParser.h"
 
 // Parse command-line inputs and execute the result
-ParserResult CommandParser::parse(const std::string &inputRaw) {
+ParserResult CommandParser::parse(const RawCommandLine &inputRaw) {
     //strip the commandline string and make it case insensitive
-    std::string input = to_lower(trim(inputRaw));
+    const RawCommandLine input = to_lower(trim(inputRaw));
 
     // bail if empty
     if (input.empty()) return ParserResult::emptyCommand;
@@ -43,10 +42,10 @@ ParserResult CommandParser::parse(const std::string &inputRaw) {
             return ParserResult::ok;
 
         case CommandType::Unknown:
-            log->error("Unknown command: " + command);
+            log->error("Unknown command: " + to_string(command));
             return ParserResult::badCommand;
         default:
-            log->error("Bad or unrecognized command: " + command);
+            log->error("Bad or unrecognized command: " + to_string(command));
             return ParserResult::badCommand;
     }
     //ToDo: add more parser logic.
