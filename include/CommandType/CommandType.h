@@ -25,7 +25,7 @@ using CommandMap = std::map<Token, CommandType>;
 
 CommandType identifyCommand(const Token& token);
 
-const std::string to_string(CommandType t);
+const std::string to_string(CommandType type);
 
 
 #endif // COMMAND_TYPE_H

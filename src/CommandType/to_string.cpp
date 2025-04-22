@@ -6,8 +6,8 @@
  */
 #include "CommandType/CommandType.h"
 
-const std::string to_string(CommandType t) {
-    switch (t) {
+const std::string to_string(const CommandType type) {
+    switch (type) {
         case CommandType::Exit:
             return "exit";
         case CommandType::Help:
