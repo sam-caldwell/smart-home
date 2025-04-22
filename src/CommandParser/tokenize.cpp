@@ -4,16 +4,17 @@
 
 #include "CommandParser/CommandParser.h"
 
-TokenList CommandParser::tokenize(const std::string& input) {
+Tokens CommandParser::tokenize(const RawCommandLine& input) {
 
-    std::vector<std::string> tokens;
+    Tokens tokens;
 
     std::istringstream stream(input);
 
-    std::string token;
+    Token current_token;
 
-    while (stream >> token) {
-        tokens.push_back(token);
+    // split tokens by whitespace and store them FIFO
+    while (stream >> current_token) {
+        tokens.push(current_token);
     }
 
     return tokens;
