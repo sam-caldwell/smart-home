@@ -7,13 +7,14 @@
 #define COMMAND_PARSER_H
 
 #include <string>
+#include <queue>
 #include <vector>
 #include <sstream>
 #include <unordered_map>
 #include <new>
 #include <exception>
 #include <memory>
-
+#include "utils/TokenQueue.h"
 #include "Logger/Logger.h"
 #include "utils/StringUtils.h"
 #include "utils/getHostIp.h"
@@ -26,8 +27,11 @@
 #include "Devices/WebEnabledDevice/WebEnabledDevice.h"
 #include "Devices/Factory/DeviceFactory.h"
 
+// This is the raw commandline text. We are abstracted from string for future proofing.
+using RawCommandLine = std::string;
 
-using TokenList = std::vector<std::string>;
+
+
 
 class CommandParser {
 public:
@@ -35,21 +39,19 @@ public:
 
     ~CommandParser();
 
-    ParserResult parse(const std::string &input);
-
-    using CommandArgs = std::vector<std::string>;
+    ParserResult parse(const RawCommandLine &input);
 
 private:
-    Logger *log;
-
     // convert string into space-delimited tokens
-    TokenList tokenize(const std::string &input);
+    Tokens tokenize(const RawCommandLine &input);
 
     // safely invoke device controller
-    ParserResult invoke_device(DeviceMap devices, CommandType cmd, CommandArgs &args);
+    ParserResult invoke_device(DeviceMap devices, CommandType cmd, Tokens &args);
 
     // Map CommandType to device instance
     DeviceMap devices;
+
+    Logger *log;
 };
 
 #endif // COMMAND_PARSER_H

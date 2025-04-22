@@ -5,7 +5,7 @@
 
 #include "CommandParser/CommandParser.h"
 
-ParserResult CommandParser::invoke_device(DeviceMap devices, CommandType cmd, CommandArgs &args) {
+ParserResult CommandParser::invoke_device(DeviceMap devices, CommandType cmd, Tokens &args) {
     if (devices.count(cmd)) {
         return devices.at(cmd)->sendCommand(args);
     } else {

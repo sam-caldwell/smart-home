@@ -2,6 +2,7 @@
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Implementation of the CommandParser logic
 
+#include "utils/Tokens.h"
 #include "CommandParser/CommandParser.h"
 
 // Parse command-line inputs and execute the result
@@ -13,13 +14,12 @@ ParserResult CommandParser::parse(const std::string &inputRaw) {
     if (input.empty()) return ParserResult::emptyCommand;
 
     // tokenize and bail if empty tokens (unusual)
-    std::vector<std::string> tokens = tokenize(input);
+    Tokens tokens = tokenize(input);
     if (tokens.empty())
-        return ParserResult::emptyCommand;
+        return ParserResult::emptyCommand; // no work to be performed here...
 
-    // identify the tokens
-    CommandType type = identifyCommand(tokens[0]);
-    switch (type) {
+    // get the first token.  This is our command
+    switch (const CommandType command = identifyCommand(tokens.pop())) {
         case CommandType::Exit:
             return ParserResult::exitCommand;
 
@@ -28,7 +28,7 @@ ParserResult CommandParser::parse(const std::string &inputRaw) {
         case CommandType::Television: //fall through
         case CommandType::Thermostat: //fall through
         case CommandType::Vacuum:
-            return invoke_device(devices, type, tokens);
+            return invoke_device(devices, command, tokens);
 
         case CommandType::Help:
             showHelp();
@@ -41,10 +41,10 @@ ParserResult CommandParser::parse(const std::string &inputRaw) {
             return ParserResult::ok;
 
         case CommandType::Unknown:
-            log->error("Unknown command: " + tokens[0]);
+            log->error("Unknown command: " + command);
             return ParserResult::badCommand;
         default:
-            log->error("Bad or unrecognized command: " + tokens[0]);
+            log->error("Bad or unrecognized command: " + command);
             return ParserResult::badCommand;
     }
     //ToDo: add more parser logic.
