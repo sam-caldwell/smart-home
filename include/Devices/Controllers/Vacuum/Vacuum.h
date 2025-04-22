@@ -22,7 +22,7 @@ public:
         /*noop*/
     };
 
-    ParserResult sendCommand(Tokens &args) override;
+    ParserResult sendCommand(Tokens &tokens) override;
 
 private:
     inline void start() { runState.on(); };

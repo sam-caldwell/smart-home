@@ -5,7 +5,7 @@
 #include "Devices/Controllers/Vacuum/Vacuum.h"
 
 // receive command-line input for processing.
-ParserResult Vacuum::sendCommand(Tokens &args) {
+ParserResult Vacuum::sendCommand(Tokens &tokens) {
 
     log->info("Lights::sendCommand start");
 
