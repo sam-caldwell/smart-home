@@ -9,8 +9,8 @@ app = Flask(__name__)
 
 # Initial vacuum robot state
 vacuum_state = {
-    "active": False,     # Is the robot currently running
-    "scheduled": None    # Optional scheduled time (24hr format as int, e.g. 1800)
+    "active": "off",     # Is the robot currently running
+    "scheduled": 1       # Optional scheduled time (24hr format as int, e.g. 1800)
 }
 
 @app.route("/api/v1/health", methods=["GET"])
@@ -28,10 +28,10 @@ def update_state():
         return jsonify({"error": "Invalid or missing JSON body"}), 400
 
     if "active" in data:
-        if isinstance(data["active"], bool):
+        if isinstance(data["active"], str) and data["active"] in ["off", "on"]:
             vacuum_state["active"] = data["active"]
         else:
-            return jsonify({"error": "'active' must be a boolean"}), 400
+            return jsonify({"error": "'active' must be on|off"}), 400
 
     if "scheduled" in data:
         if data["scheduled"] is None:

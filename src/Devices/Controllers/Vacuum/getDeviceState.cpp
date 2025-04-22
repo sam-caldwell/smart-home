@@ -10,13 +10,19 @@ ParserResult Vacuum::getDeviceState(){
         const std::string json=getRemoteState();
         log->info("state: " + json);
 
-        // SimpleJson parser(json);
+        SimpleJson parser(json);
 
-        //ToDo: parse json and store state
+        {
+            log->info("parsing run state");
+            const std::string raw=parser.getString("active");
+            this->runState.set(raw);
+            log->info("runState: " + raw+ " stored as " + this->runState.string());
+        }
+
 
     }catch(...){
-        log->error("Thermostat device did not respond properly. Try again later.");
-        std::cout << "Error: Cannot talk to thermostat." << std::endl;
+        log->error("Vacuum device did not respond properly. Try again later.");
+        std::cout << "Error: Cannot talk to Vacuum." << std::endl;
         return ParserResult::error;
     }
     return ParserResult::ok;
