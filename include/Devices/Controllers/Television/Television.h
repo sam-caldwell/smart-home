@@ -15,14 +15,19 @@
 class Television : public WebEnabledDevice {
 public:
     explicit Television(Logger *log, const std::string &connstr);
-    ~Television() override {};
+
+    ~Television() override {
+        /*noop*/
+    };
 
     ParserResult sendCommand(std::vector<std::string> &args) override;
 
 private:
     inline void on() { powerState.on(); }
     inline void off() { powerState.off(); }
+
     void volume(const std::string &v);
+
     void channel(const std::string &v);
 
     ParserResult getDeviceState();

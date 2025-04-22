@@ -17,6 +17,7 @@ public:
     explicit Vacuum(Logger *log, const std::string &connstr);
 
     ~Vacuum() override {
+        /*noop*/
     };
 
     ParserResult sendCommand(std::vector<std::string> &args) override;
