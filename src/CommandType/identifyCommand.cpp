@@ -9,7 +9,7 @@
 
 // Lookup a command in our table and return the CommandType token
 CommandType identifyCommand(Token &token) {
-    constexpr CommandMap commandMap {
+    const CommandMap commandMap {
                 {"exit", CommandType::Exit},
                 {"quit", CommandType::Exit},
                 {"?", CommandType::Help},
