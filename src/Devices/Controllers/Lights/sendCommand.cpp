@@ -5,45 +5,40 @@
 #include "Devices/Controllers/Lights/Lights.h"
 
 // receive command-line input for processing.
-ParserResult Lights::sendCommand(Tokens &args) {
+ParserResult Lights::sendCommand(Tokens &tokens) {
     log->info("Lights::sendCommand start");
-
-    int argc = args.size();
-    const std::string subCommand = to_lower(args[1]); //set|get
 
     //Update internal state from the device before we do anything. Bail on error
     if (this->getDeviceState() != ParserResult::ok)
         return ParserResult::ok; //Bail.  We've already said something to the user.  swallow the error
 
-    if (subCommand == "get") {
+    if (const std::string subCommand = to_lower(tokens.pop()); subCommand == "get") {
+        //iterate over the state map and print the current state to stdout
         for (const auto &[name, state]: *lights) {
             std::cout << name << " : " << state.string() << std::endl;
         }
     } else {
-        if (argc < 3)
-            return ParserResult::invalidArgument;
+        if (tokens.empty())
+            return ParserResult::invalidArgument; // we expected a setting
 
-        const std::string name = to_lower(args[1]);
-        if (exists(name)) {
-            log->info("light found: " + name);
+        if (const std::string lightName = subCommand; exists(subCommand)) {
+            const std::string setting = tokens.pop();
+            if (setting == "on")
+                lights->at(lightName).on();
+            else if (setting == "off")
+                lights->at(lightName).off();
+            else {
+                log->error("invalid light setting: '" + lightName + "'");
+                std::cout << "lights can only be turned 'on' or 'off': " << lightName << std::endl;
+                return ParserResult::badCommand;
+            }
+            log->info("light " + lightName + ": " + setting);
+            updateDeviceState();
         } else {
-            log->error("light not found: " + name);
-            std::cout << "light not found: " << name << std::endl;
+            log->error("light not found: " + lightName);
+            std::cout << "light not found: " << lightName << std::endl;
             return ParserResult::badCommand;
         }
-
-        const std::string value = to_lower(args[2]);
-        if (value == "on")
-            lights->at(name).on();
-        else if (value == "off")
-            lights->at(name).off();
-        else {
-            log->error("invalid light setting: '" + name + "'");
-            std::cout << "lights can only be turned 'on' or 'off': " << name << std::endl;
-            return ParserResult::badCommand;
-        }
-        log->info("light " + name + ": "+value);
-        updateDeviceState();
     }
     return ParserResult::ok;
 }

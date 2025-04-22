@@ -19,7 +19,7 @@ class Lights: public WebEnabledDevice {
 public:
     explicit Lights(Logger* log, const ConnectionString &connstr);
     ~Lights() override;
-    ParserResult sendCommand(Tokens &args) override;
+    ParserResult sendCommand(Tokens &tokens) override;
 private:
     bool exists(const std::string &room);
     void turnOn(const std::string &room);
