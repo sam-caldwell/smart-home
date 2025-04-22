@@ -12,7 +12,7 @@ ParserResult Lights::sendCommand(Tokens &tokens) {
     if (this->getDeviceState() != ParserResult::ok)
         return ParserResult::ok; //Bail.  We've already said something to the user.  swallow the error
 
-    if (const std::string subCommand = to_lower(tokens.pop()); subCommand == "get") {
+    if (const std::string subCommand = tokens.pop(); subCommand == "get") {
         //iterate over the state map and print the current state to stdout
         for (const auto &[name, state]: *lights) {
             std::cout << name << " : " << state.string() << std::endl;
