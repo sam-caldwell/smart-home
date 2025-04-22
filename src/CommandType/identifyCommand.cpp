@@ -4,10 +4,12 @@
  * @brief Enum class for valid smart home CLI command categories
  * @version 1.0 - Initial stub created for testing integration.
  */
+
 #include "CommandType/CommandType.h"
 
-CommandType identifyCommand(const std::string& cmd) {
-    static std::unordered_map<std::string, CommandType> commandMap {
+// Lookup a command in our table and return the CommandType token
+CommandType identifyCommand(Token &token) {
+    constexpr CommandMap commandMap {
                 {"exit", CommandType::Exit},
                 {"quit", CommandType::Exit},
                 {"?", CommandType::Help},
@@ -20,7 +22,7 @@ CommandType identifyCommand(const std::string& cmd) {
                 {"tic-tac-toe", CommandType::TicTacToe},
     };
 
-    auto it = commandMap.find(cmd);
+    auto it = commandMap.find(token);
     return (it != commandMap.end())
                ? it->second
                : CommandType::Unknown;
