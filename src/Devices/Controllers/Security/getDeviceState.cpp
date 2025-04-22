@@ -13,8 +13,10 @@ ParserResult Security::getDeviceState(){
         SimpleJson parser(json);
 
         {
-            log->info("parsing armed state (there's a spook joke in here somewhere)");
-            //ToDo: parse and store state
+            log->info("parsing armed state"); //In memory of T. Kearns, a good spook joke.
+            const std::string raw=parser.getString("armed");
+            this->armedState.set(raw);
+            log->info("armedState: " + raw+ " stored as " + this->armedState.string());
         }
 
     }catch(...){

@@ -31,17 +31,22 @@ ParserResult Television::sendCommand(std::vector<std::string> &args) {
                 << "channel: " << std::to_string(channelState) << "\n"
                 << std::endl;
         return ParserResult::ok;
-    } else if (subCommand == "set") {
+    }
+    if (subCommand == "on") {
+        powerState.on();
+        return updateDeviceState();
+    }
+    if (subCommand == "off") {
+        powerState.off();
+        return updateDeviceState();
+    }
+    if (subCommand == "set") {
         if (argc < 4) {
             log->error("Television::sendCommand: wrong number of arguments");
             return ParserResult::missingArgument;
         }
         const std::string subject = to_lower(args[2]);
-        if (subject == "on") {
-            powerState.on();
-        } else if (subject == "off") {
-            powerState.off();
-        } else if (subject == "volume") {
+        if (subject == "volume") {
             if (argc == 4)
                 volume(args[3]);
         } else if (subject == "channel") {

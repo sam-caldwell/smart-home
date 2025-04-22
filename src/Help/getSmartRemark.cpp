@@ -21,6 +21,9 @@ std::string getSmartRemark() {
         "My grandfather was WOPR.",
         "Strange game.  The only winning move is not to play.",
         "No fighting in the war room!",
+        "Do you know what a phonebook is good for?",
+        "My humor is so dark, even x-rays struggle to escape",
+        "What is your major malfunction?",
         "The whole point of the doomsday machine is lost if you keep it a secret!\n--Dr. Strangelove"
     };
 
