@@ -50,8 +50,8 @@ int CommandShell::Run() {
             case ParserResult::invalidArgument:
             case ParserResult::missingArgument:
                 log->error("Missing argument.");
-            std::cout << "Use ? or help for usage." << std::endl;
-            break; //keep going
+                std::cout << "Use ? or help for usage." << std::endl;
+                break; //keep going
 
             case ParserResult::emptyCommand:
                 log->error("No input provided.");

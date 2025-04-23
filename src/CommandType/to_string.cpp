@@ -23,6 +23,6 @@ const std::string to_string(const CommandType type) {
         case CommandType::Security:
             return "security";
         default:
-            throw std::runtime_error("unknown command type");
+            return "unknown command";
     }
 }
