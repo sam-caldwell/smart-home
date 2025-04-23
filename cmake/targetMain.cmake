@@ -6,6 +6,7 @@ target_sources(smart_home_exec PRIVATE
         src/utils/to_lower.cpp
         src/utils/to_upper.cpp
         src/utils/OnOff.cpp
+        src/utils/Tokens.cpp
         src/utils/getCurrentTimestamp.cpp
         src/utils/SimpleJson/parse.cpp
         src/utils/SimpleJson/stringify.cpp
@@ -29,6 +30,8 @@ target_sources(smart_home_exec PRIVATE
         src/HttpClient/constructor.cpp
         src/HttpClient/post.cpp
         src/HttpClient/get.cpp
+        src/CommandType/identifyCommand.cpp
+        src/CommandType/to_string.cpp
         src/Devices/Device/sendCommand.cpp
         src/Devices/Device/constructor.cpp
         src/Devices/Device/getRemoteState.cpp
@@ -82,8 +85,6 @@ target_sources(smart_home_exec PRIVATE
         src/CommandParser/tokenize.cpp
         src/CommandParser/destructor.cpp
         src/CommandParser/constructor.cpp
-        src/CommandType/identifyCommand.cpp
-        src/CommandType/to_string.cpp
         src/Help/showHelp.cpp
         src/Help/getSmartRemark.cpp
 )

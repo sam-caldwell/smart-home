@@ -1,7 +1,35 @@
-#pragma once
+// File: utils/Tokens.h
+// Author: Sam Caldwell
+// Description: Concrete FIFO queue for std::string with atomic next() behavior.
 
-#include "utils/Token.h"
-#include "utils/TokenQueue.h"
+#ifndef TOKENS_H
+#define TOKENS_H
 
-// This is a collection of tokens. We are abstracted from string for future proofing.
-using Tokens = TokenQueue<Token>;
+#include <queue>
+#include <string>
+
+
+
+class Tokens {
+public:
+	using Token = std::string;
+    // Push a token to the back
+    void push(const std::string &token);
+
+    // Check if empty
+    bool empty() const;
+
+    // Number of tokens
+    size_t size() const;
+
+    // Get and remove the front element
+    std::string pop();
+
+    // Peek without removing
+    const std::string &peek() const;
+
+private:
+    std::queue<std::string> data;
+};
+
+#endif // TOKENS_H

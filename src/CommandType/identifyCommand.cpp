@@ -1,5 +1,5 @@
 /**
- * @file CommandType/identifyCommand.cpp
+ * @file identifyCommand.cpp
  * @author Sam Caldwell
  * @brief Enum class for valid smart home CLI command categories
  * @version 1.0 - Initial stub created for testing integration.
@@ -8,7 +8,7 @@
 #include "CommandType/CommandType.h"
 
 // Lookup a command in our table and return the CommandType token
-CommandType identifyCommand(Token &token) {
+CommandType identifyCommand(const Token &token) {
     const CommandMap commandMap {
                 {"exit", CommandType::Exit},
                 {"quit", CommandType::Exit},

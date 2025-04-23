@@ -7,7 +7,6 @@
 
 #include <iostream>
 #include <map>
-#include "utils/Token.h"
 
 enum CommandType {
     Exit,
@@ -21,11 +20,12 @@ enum CommandType {
     Unknown
 };
 
+using Token = std::string;
+
 using CommandMap = std::map<Token, CommandType>;
 
 CommandType identifyCommand(const Token& token);
 
 const std::string to_string(CommandType type);
-
 
 #endif // COMMAND_TYPE_H
