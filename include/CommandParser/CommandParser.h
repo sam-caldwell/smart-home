@@ -2,6 +2,7 @@
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Parses CLI input strings into actionable command tokens
 // Dependencies: <string>, <vector>, <unordered_map>, Logger
+// Changes: Initial version created for smart home automation project
 
 #ifndef COMMAND_PARSER_H
 #define COMMAND_PARSER_H

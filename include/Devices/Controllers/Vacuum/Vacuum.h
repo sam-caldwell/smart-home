@@ -1,6 +1,7 @@
 // Security.h
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Security Http API device class
+// Changes: Initial version created for smart home automation project
 
 #ifndef VACUUM_H
 #define VACUUM_H

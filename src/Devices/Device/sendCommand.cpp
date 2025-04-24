@@ -1,4 +1,4 @@
-
+Device
 #include "Devices/Device/Device.h"
 
 ParserResult Device::sendCommand(Tokens &args) {

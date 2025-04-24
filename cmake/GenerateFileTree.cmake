@@ -1,6 +1,7 @@
 # cmake/GenerateFileTree.cmake
 # Author: Sam Caldwell
 # Description: Generates a normalized file structure tree for documentation
+# Changes: Initial version created for smart home automation project
 
 add_custom_target(generate_file_tree
         COMMENT "Generating docs/file_structure.txt from project tree..."

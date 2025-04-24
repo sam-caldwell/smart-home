@@ -1,6 +1,7 @@
 // Television.h
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Television Http API device class
+// Changes: Initial version created for smart home automation project
 
 #ifndef TELEVISION_DEVICE_H
 #define TELEVISION_DEVICE_H

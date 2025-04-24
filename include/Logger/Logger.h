@@ -2,6 +2,7 @@
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Stream-based logger (not templated) for console or file output.
 // Dependencies: <iostream>, <fstream>, <string>
+// Changes: Initial version created for smart home automation project
 
 #ifndef LOGGER_H
 #define LOGGER_H

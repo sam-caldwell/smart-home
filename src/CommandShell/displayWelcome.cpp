@@ -1,5 +1,5 @@
 /**
-* @file CommandShell/displayWelcome.cpp
+* @file displayWelcome.cpp
  * @author Sam Caldwell
  * @brief Display the commandshell banner
  * @version 1.0 - Initial stub created for testing integration.

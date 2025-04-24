@@ -1,6 +1,7 @@
 // DeviceFactory.h
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Factory for constructing smart home device instances by CommandType and endpoint
+// Changes: Initial version created for smart home automation project
 
 #ifndef DEVICE_FACTORY_H
 #define DEVICE_FACTORY_H

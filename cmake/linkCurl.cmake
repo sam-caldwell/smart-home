@@ -1,3 +1,6 @@
+# cmake/linkCurl.cmake
+# Author: Sam Caldwell
+# Description: link configure libcurl for linking
 
 if(APPLE)
 

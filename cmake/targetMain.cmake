@@ -1,3 +1,6 @@
+# cmake/targetMain.cmake
+# Author: Sam Caldwell
+# Description: configure the project executable and sources.
 
 # Main executable
 add_executable(smart_home_exec src/main.cpp)

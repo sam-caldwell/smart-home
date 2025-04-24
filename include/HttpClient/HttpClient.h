@@ -2,6 +2,7 @@
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Simple HTTP client using libcurl
 // Dependencies: libcurl
+// Changes: Initial version created for smart home automation project
 
 #ifndef HTTP_CLIENT_H
 #define HTTP_CLIENT_H

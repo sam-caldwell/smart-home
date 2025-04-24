@@ -1,4 +1,7 @@
-
+// getPort.cpp
+// Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
+// Description: get port number from environment variables.
+// Changes: Initial version created for smart home automation project
 #include "utils/getPort.h"
 
 const std::string getPort(const std::string &name) {

@@ -1,6 +1,7 @@
 // ThermostatMode.h
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Define the two modes of a thermostat (heat|cool)
+// Changes: Initial version created for smart home automation project
 
 #ifndef THERMOSTAT_MODE_H
 #define THERMOSTAT_MODE_H

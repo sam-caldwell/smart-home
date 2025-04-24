@@ -1,7 +1,6 @@
 // exit_codes.h
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: define numeric exit codes (e.g. success=0)
-// Dependencies: None
 // Changes: Initial version created for smart home automation project
 
 #ifndef EXIT_CODES_H

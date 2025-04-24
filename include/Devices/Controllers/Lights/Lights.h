@@ -1,6 +1,7 @@
 // Devices/Controller/Lights.h
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Lights Http API device class
+// Changes: Initial version created for smart home automation project
 
 #ifndef LIGHTS_DEVICE_H
 #define LIGHTS_DEVICE_H

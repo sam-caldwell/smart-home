@@ -1,6 +1,7 @@
 // Device.h
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: This is the base class for all devices
+// Changes: Initial version created for smart home automation project
 
 #ifndef DEVICE_H
 #define DEVICE_H

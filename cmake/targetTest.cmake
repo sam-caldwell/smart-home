@@ -1,3 +1,6 @@
+# cmake/targetTest.cmake
+# Author: Sam Caldwell
+# Description: configure a test program for integration test
 
 # Test executable
 add_executable(test_program test/main.cpp test/main.cpp)

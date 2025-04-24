@@ -1,6 +1,7 @@
 // Security.h
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Security Http API device class
+// Changes: Initial version created for smart home automation project
 
 #ifndef SECURITY_DEVICE_H
 #define SECURITY_DEVICE_H

@@ -1,5 +1,5 @@
 /**
-* @file CommandType/to_string.cpp
+* @file to_string.cpp
  * @author Sam Caldwell
  * @brief Enum class for valid smart home CLI command categories
  * @version 1.0 - Initial stub created for testing integration.

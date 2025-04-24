@@ -1,7 +1,7 @@
 // SimpleJson.h
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Minimal JSON parser for known (FLAT) structure
-// Dependencies: None
+// Changes: Initial version created for smart home automation project
 
 /*
  * WARNING:

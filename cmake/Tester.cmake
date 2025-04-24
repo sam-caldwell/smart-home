@@ -1,3 +1,6 @@
+# cmake/Tester.cmake
+# Author: Sam Caldwell
+# Description: cbuild tests and run tests
 
 add_custom_target(build_tests
         COMMAND ${CMAKE_COMMAND} --build . --target test_program

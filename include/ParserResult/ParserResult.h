@@ -1,7 +1,7 @@
 // ParserResult.h
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Represents CommandParser outcomes
-// Dependencies: none
+// Changes: Initial version created for smart home automation project
 
 #ifndef PARSER_RESULT_H
 #define PARSER_RESULT_H

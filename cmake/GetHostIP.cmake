@@ -1,3 +1,7 @@
+# cmake/GetHostIP.cmake
+# Author: Sam Caldwell
+# Description: Provide cmake function get_host_ip()
+
 function(get_host_ip HOST_IP)
     if(UNIX AND NOT APPLE)
         # Linux: get IP from the first non-loopback interface

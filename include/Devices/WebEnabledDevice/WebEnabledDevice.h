@@ -1,6 +1,7 @@
 // WebEnabledDevice.h
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: This is the base class for all devices driven by HTTP API
+// Changes: Initial version created for smart home automation project
 
 #ifndef WEB_ENABLED_DEVICE_H
 #define WEB_ENABLED_DEVICE_H

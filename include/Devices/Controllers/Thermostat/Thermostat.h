@@ -1,6 +1,7 @@
 // Thermostat.h
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Thermostat Http API device class
+// Changes: Initial version created for smart home automation project
 
 #ifndef THERMOSTAT_H
 #define THERMOSTAT_H

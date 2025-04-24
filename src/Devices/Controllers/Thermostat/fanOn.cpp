@@ -1,4 +1,6 @@
-
+// fanOn.cpp
+// Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
+// Description: Turn on the fan
 #include "Devices/Controllers/Thermostat/Thermostat.h"
 
 void Thermostat::fanOn(){

@@ -1,6 +1,7 @@
 // CommandType.h
 // Author: Sam Caldwell <scaldwell@asymmetric-effort.com>
 // Description: Enum class for valid smart home CLI command categories
+// Changes: Initial version created for smart home automation project
 
 #ifndef COMMAND_TYPE_H
 #define COMMAND_TYPE_H
